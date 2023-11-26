@@ -50,7 +50,7 @@ export default function AuthCard() {
     <AuthCardContainer>
       <AuthCardSection>
         <img
-          src={BLCGlogo}
+          src="https://www.billionlocalcoin.io/public/images/logo.png"
           alt="Logo"
         />
         <Heading as="h2" size="lg">
@@ -67,10 +67,10 @@ export default function AuthCard() {
         modalSize={"compact"}
         welcomeScreen={{}}
         termsOfServiceUrl={
-          "http://tbc10rewardcoin.space/"
+          "https://www.billionlocalcoin.io/"
         }
         privacyPolicyUrl={
-          "http://tbc10rewardcoin.space/"
+          "https://www.billionlocalcoin.io"
         }
       />
       </AuthCardSection>
