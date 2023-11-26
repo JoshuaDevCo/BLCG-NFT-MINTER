@@ -76,7 +76,7 @@ export default function NFTMembership() {
           {contractMetadata.name}
         </h2>
         <h6 className="nft-font text-portal">
-          Claim Tokenized Bronze NFT!
+          Claim BLCG Golden Pass NFT for FREE!
         </h6>
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata.description}</h5>
