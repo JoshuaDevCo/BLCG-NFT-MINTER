@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="title text-portal">
         <h4>Welcome Back!</h4>
         <h1>
-          BLCG Smart Portal
+         Smart Portal
         </h1>
       </div></div>
       <div className="flex-none lg:hidden">
@@ -69,10 +69,10 @@ export default function Navbar() {
         modalSize={"compact"}
         welcomeScreen={{}}
         termsOfServiceUrl={
-          "http://tbc10rewardcoin.space/"
+          "https://www.billionlocalcoin.io/"
         }
         privacyPolicyUrl={
-          "http://tbc10rewardcoin.space/"
+          "https://www.billionlocalcoin.io/"
         }
       />
       </li>
@@ -85,8 +85,9 @@ export default function Navbar() {
     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 min-h-full  bg-base-200">
     <SidebarHeader className="mt-5 mb-5">
-        <img src={BLCGlogo} alt="Logo" className="w-20 h-20 mr-2" />
-        <span className="text-xl font-bold tagen-margin">BLCG Portal</span>
+        <img src="https://www.billionlocalcoin.io/public/images/logo.png"
+ alt="Logo" className="w-20 h-20 mr-2" />
+        <span className="text-xl font-bold tagen-margin">Smart Portal</span>
       </SidebarHeader>
       <div className="profile-wallet"></div>
       <ConnectWallet/>
