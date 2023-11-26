@@ -33,39 +33,37 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/smart-portal",
+        path: "/smart-portal", // Add your smart-portal route
         element: <Portal />,
       },
       {
         path: "/mint-nfts",
         element: <NFT />,
       },
-
       {
         path: "/stake-nfts",
         element: <StakeNFT />,
       },
-
       {
         path: "/stake-trc",
         element: <StakeToken />,
       },
-
       {
         path: "/swap-trc",
         element: <FreshMint />,
       },
-
       {
         path: "/workshop",
         element: <Workshop />,
       },
-
+      // Add a catch-all route for unmatched routes
+      {
+        path: "*",
+        element: <Portal />, // Redirect to "/smart-portal"
+      },
     ],
   },
-
 ]);
-
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
