@@ -42,11 +42,11 @@ export default function Navbar() {
     {/* Navbar */}
     <div className="w-full navbar">
       <div className="flex-1 px-2 mx-2">
-      <img
+      {/* <img
           src="https://www.billionlocalcoin.io/public/images/logo.png"
           alt="Logo"
           width="50px"
-        />
+        /> */}
         <div className="title text-portal">
         <h4>Welcome Back!</h4>
         <h1>
