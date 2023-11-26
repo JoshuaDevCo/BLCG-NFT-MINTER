@@ -45,6 +45,7 @@ export default function Navbar() {
       <img
           src="https://www.billionlocalcoin.io/public/images/logo.png"
           alt="Logo"
+          width="50px"
         />
         <div className="title text-portal">
         <h4>Welcome Back!</h4>
