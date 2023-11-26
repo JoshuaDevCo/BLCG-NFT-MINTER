@@ -33,7 +33,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/smart-portal", // Add your smart-portal route
+        path: "/", 
+        element: <Portal />,
+      },
+      {
+        path: "/smart-portal", 
         element: <Portal />,
       },
       {
