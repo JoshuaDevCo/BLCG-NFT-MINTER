@@ -1,0 +1,496 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Permanent+Marker&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ebc45b;
+}
+
+.btnflex {
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+}
+
+.bg-faq {
+  --tw-bg-opacity: 1;
+  background-color: #ebc45b;
+}
+
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  right: 0 !important;
+}
+
+.price{
+  color:#fff;
+}
+
+
+.footer-title {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.5;
+  color: #37ef7c;
+}
+
+.text-feature {
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+}
+
+.text-faqs {
+  --tw-text-opacity: 1;
+  color: #0b6523;
+  font-size: 20px;
+}
+
+.text-header {
+  font-size: 20px;
+  line-height: 1.75rem;
+}
+
+.bg-features {
+  --tw-bg-opacity: 1;
+  background-color: #0f0b00;
+}
+
+.bg-footer {
+  --tw-bg-opacity: 1;
+  background-image: url(../assets/footerbg.png);
+  border-top: 1px solid #23df0abb;
+    border-radius: 0;
+    background-position: 50%!important;
+    background-repeat: repeat;
+    background-size: inherit;
+    background-attachment: scroll;
+}
+
+
+.tagen-margin {
+  margin-top:26px;
+}
+
+.coinprice {
+  font-size: 13px;
+  margin-top: -6px;
+}
+
+.timeGrid{
+  display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: nowrap;
+    margin-top: -9px;
+
+}
+
+.bg-features-1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-features-1::before {
+  content: "";
+  background: #06010199; /* This sets the colored overlay */
+  opacity: 0.7; /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+.bg-features-1::after {
+  content: "";
+  background-image: url(../assets/bg1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the colored overlay */
+}
+
+
+.bg-stats {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-stats::before {
+  content: "";
+  background: #000000c9; /* This sets the colored overlay */
+  opacity: 0.7; /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+.bg-stats::after {
+  content: "";
+  background-image: url(../assets/bgstats.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the colored overlay */
+}
+
+.bg-tokes {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-tokes::before {
+  content: "";
+  background: #000000; /* This sets the colored overlay */
+  opacity: 0.7; /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+.bg-tokes::after {
+  content: "";
+  background-image: url(../assets/bgtokes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the colored overlay */
+}
+
+
+.bg-faqs {
+  background-image: url(../assets/bgfaqs.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-cta::before {
+  content: "";
+  background: #00000052; /* This sets the colored overlay */
+  opacity: 0.7; /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+.bg-cta::after {
+  content: "";
+  background-image: url(../assets/bgcta.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the colored overlay */
+}
+
+.bg-nfts {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-nfts::before {
+  content: "";
+  background: #00000052; /* This sets the colored overlay */
+  opacity: 0.7; /* Adjust the opacity as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind the content */
+}
+
+.bg-nfts::after {
+  content: "";
+  background-image: url(../assets/bgnft.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place it behind the colored overlay */
+}
+
+
+
+.btndisco {
+  border: 1px solid #ff000029;
+  border-radius: 25px;
+  background-image: url(../assets/red.png)!important;
+  box-shadow: 0 0 55px -8px #7a0a0a;
+  background-position: 50%;
+  color: red;
+  background-size: cover;
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+.headerColor {
+  color: #99a376;
+  background-image: -webkit-linear-gradient(316deg,#3cf17c,#ebc45b 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 50px;
+}
+
+.trcfooterColor {
+  --tw-bg-opacity: 1;
+  background-color: #3b2d0a;
+}
+
+.headertext{
+  font-size: 13px;
+}
+
+.hero-overlay {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  height: 100%;
+  width: 100%;
+  background-color: #0000008a;
+  --tw-bg-opacity: 0.5;
+}
+
+.custom-gap {
+   gap: 12rem;
+}
+
+
+.trcNavColor {
+  --tw-bg-opacity: 1;
+   background-color: #000000;
+}
+
+.trcHeader{
+   --tw-bg-opacity: 1;
+   background-color: #5f4702;
+}
+
+.bg-portal {
+  --tw-bg-opacity: 1;
+  background-color: #111827;
+}
+
+.border-portal {
+  --tw-border-opacity: 1;
+  border-color: #ebc45b;
+}
+
+.text-portal {
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+}
+
+.nft-font {
+  font-size: 13px;
+}
+
+.profile-wallet {
+  margin-top: -50px;
+}
+
+.bg-gradient-info {
+  background-image: linear-gradient(to top, rgb(0, 198, 251) 0%, rgb(0, 91, 234) 100%);
+}
+
+.progress {
+  background-color: rgb(255 255 255 / 12%);
+}
+
+.nft-head {
+  font-size: 26.25px;
+}
+
+.portalmenu {
+  line-height: 1.25rem;
+  gap: 10px;
+  width: 17vh;
+}
+/* .menu li > *:not(ul):not(.menu-title):not(details):active, .menu li > *:not(ul):not(.menu-title):not(details).active, .menu li > details > summary:active {
+  --tw-bg-opacity: 1;
+  background-color: #191e24;
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+  border: 1px solid #ffe00078;
+  border-radius: 30px;
+  box-shadow: 3px -2px 55px -8px #ffe0007a;
+} */
+
+
+a {
+   color: #ebc45b;
+   text-decoration: inherit;
+}
+
+
+.btn-trc {
+   --tw-border-opacity: 1;
+   border-color: #f30000;
+   --tw-bg-opacity: 1;
+   background-color: #ebc45b;
+   --tw-text-opacity: 1;
+   color: black;
+   outline-color: #ebc45b;
+}
+
+.text-p {
+  --tw-text-opacity: 1;
+  color: #3fff84;
+}
+
+.text-heading {
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+}
+
+.text-hero {
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+  text-shadow: -1px 2px 0px white;
+}
+
+.textHeroP {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+
+.menu-lg :where(li:not(.menu-title) > *:not(ul):not(details):not(.menu-title)), .menu-lg :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   font-size: 1.125rem;
+   line-height: 1.75rem;
+   border-radius: var(--rounded-btn, 0.5rem);
+   color: #ebc45b;
+}
+
+
+.btn-ghost {
+   border-width: 1px;
+   border-color: transparent;
+   background-color: #ebc45b;
+   color: #000000;
+   --tw-shadow: 0 0 #0000;
+   --tw-shadow-colored: 0 0 #0000;
+   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+   outline-color: currentColor;
+}
+
+
+.flex.items-start.gap-12 {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  background-image: radial-gradient(circle closest-corner at 50% -20%,rgba(122,76,254,.15),transparent),linear-gradient(rgba(33,17,53,.25),rgba(14,12,22,.25));
+  border: 1px solid rgba(170,142,214,.15);
+  border-radius: 18px;
+  padding: 24px 24px 36px;
+  transition: background-color .6s;
+  display: flex;
+}
+
+
+.nftcards {
+  background-image: radial-gradient(circle closest-corner at 50% -20%,#ffba00,transparent),linear-gradient(rgb(33 53 17),#000);
+  transition: background-color .6s;
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: #99a376;
+  background-image: -webkit-linear-gradient(316deg,#00ffcd,#0df 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smartbtn {
+  border: 1px solid #ffe00078;
+  border-radius: 25px;
+  background-image: url(../assets/red.png)!important;
+  box-shadow: 3px -2px 55px -8px #ffe0007a;
+  background-position: 50%;
+  color: #ffe000;
+  background-size: cover;
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+.menu {
+  line-height: 1.25rem;
+  gap: 20px;
+}
+
+.navflex {
+  display: flex;
+  margin-left: 17px;
+}
+
+.menu li > *:not(ul):not(.menu-title):not(details):active, .menu li > *:not(ul):not(.menu-title):not(details).active, .menu li > details > summary:active {
+  --tw-bg-opacity: 1;
+  background-color: #191e24;
+  --tw-text-opacity: 1;
+  color: #ebc45b;
+  border: 1px solid #ffe00078;
+  border-radius: 30px;
+  box-shadow: inset 1px 1px 13px 19px #40ff3338;
+}
+
+@media (min-width: 768px) {
+  .btm-nav {
+    display: none; /* Hide on desktop screens */
+  }
+}
