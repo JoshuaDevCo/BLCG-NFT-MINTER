@@ -18,7 +18,8 @@ const AuthCardSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #fff;
+  background-color: #000;
+  border:1px solid #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
