@@ -489,6 +489,11 @@ a {
   color: #27ff00;
 }
 
+.bg-side {
+  --tw-bg-opacity: 1;
+  background-color: black;
+}
+
 @media (min-width: 768px) {
   .btm-nav {
     display: none; /* Hide on desktop screens */

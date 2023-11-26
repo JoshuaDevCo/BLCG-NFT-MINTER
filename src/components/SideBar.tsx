@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => {
 
   return (
    
-    <SidebarContainer className={`bg-gray-900 text-white ${navbarState ? 'active' : ''}`}>
+    <SidebarContainer className={`bg-side text-white ${navbarState ? 'active' : ''}`}>
       <SidebarHeader className="container p-4">
        <div className="navflex"><img src="https://www.billionlocalcoin.io/public/images/logo.png" alt="Logo" className="w-20 h-20 mr-2" />
         <span className="text-xl font-bold tagen-margin">Smart Portal</span>
