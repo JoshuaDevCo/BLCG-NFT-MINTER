@@ -108,92 +108,19 @@ export default function NFTMembership() {
 
   return (
     <SlidingCard className="rounded-[12px] border-[2px] border-portal bg-clip-border shadow-md shadow-[#27ff0059] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none !p-[14px] mt-4 mb-4">
-      {!isActiveClaimPhaseLoading && (
-        <div>
-          <div className="collectionImage">
-            <MediaRenderer src={contractMetadata?.image} />
-          </div>
-          <div>
-            <h1>{contractMetadata?.name}</h1>
-            <p>{contractMetadata?.description}</p>
-
-            {!isActiveClaimPhaseLoading ? (
-              <div>
-                <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
-                <p>
-                  Price:{" "}
-                  {activeClaimPhase?.price
-                    ? ethers.utils.formatUnits(activeClaimPhase.price)
-                    : "N/A"}
-                </p>
-              </div>
-            ) : (
-              <p>Loading...</p>
-            )}
-            {!totalSupplyisLoading && !isTotalClaimedLoading ? (
-              <p>
-                Claimed: {totalClaimed?.toNumber()} /{" "}
-                {totalSupply?.toNumber()}
-              </p>
-            ) : (
-              <p>Loading...</p>
-            )}
-
-            {address ? (
-              !isClaimIneligibilityReasonsLoading ? (
-                claimIneligibilityReasons?.length! > 0 ? (
-                  claimIneligibilityReasons?.map((reason, index) => (
-                    <p key={index}>{reason}</p>
-                  ))
-                ) : (
-                  <div>
-                    <p>Eligible to claim</p>
-                    <div className="claimContainer">
-                      <div className="claimValue">
-                        <button className="claimBtn" onClick={decrement}>
-                          -
-                        </button>
-                        <input
-                          className="claimInput"
-                          type="number"
-                          value={claimQuantity}
-                        />
-                        <button className="claimBtn" onClick={increment}>
-                          +
-                        </button>
-                      </div>
-                      <Web3Button
-                        contractAddress={tokenizedBronzeAddress}
-                        action={(contract) =>
-                          contract.erc721.claim(claimQuantity)
-                        }
-                      >
-                        Claim NFT
-                      </Web3Button>
-                    </div>
-                  </div>
-                )
-              ) : (
-                <p>Checking Eligibility...</p>
-              )
-            ) : (
-              <p>Connect Wallet to claim</p>
-            )}
-          </div>
-        </div>
-      )}
       <ImageContainer>
-        <img src={contractMetadata.image} alt="Token Logo" />
+        <img src={contractMetadata?.image} alt="Token Logo" />
       </ImageContainer>
       <CardContent>
         <h2 className="card-title text-portal nft-head">
-          {contractMetadata.name}
+        {contractMetadata?.name}        
         </h2>
+
         <h6 className="nft-font text-portal">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
         <TimerGrid />
-        <h5 className="nft-font">{contractMetadata.description}</h5>
+        <h5 className="nft-font">{contractMetadata?.description}</h5>
         <div className="flex gap-2">
           {!isActiveClaimPhaseLoading ? (
             <div>
@@ -208,7 +135,7 @@ export default function NFTMembership() {
           ) : (
             <p>Loading...</p>
           )}
-          {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
+          {!totalSupplyisLoading && !isTotalClaimedLoading ? (
             <p>
               Claimed: {totalClaimed?.toNumber()} /{" "}
               {totalSupply?.toNumber()}
