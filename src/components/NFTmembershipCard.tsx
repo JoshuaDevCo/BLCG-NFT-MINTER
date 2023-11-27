@@ -122,27 +122,25 @@ export default function NFTMembership() {
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
         <div className="flex gap-2">
+          
           {!isActiveClaimPhaseLoading ? (
             <div>
               <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
-              <p>
-                Price:{" "}
-                {activeClaimPhase?.price
-                  ? ethers.utils.formatUnits(activeClaimPhase.price)
-                  : "N/A"}
-              </p>
             </div>
           ) : (
             <p>Loading...</p>
           )}
-          {!totalSupplyisLoading && !isTotalClaimedLoading ? (
-            <p>
-              Claimed: {totalClaimed?.toNumber()} /{" "}
-              {totalSupply?.toNumber()}
-            </p>
-          ) : (
-            <p>Loading...</p>
-          )}
+
+          <h5 className="nft-font">
+            {" "}
+            Price:{" "}
+            <b className="text-bold text-portal">
+            {activeClaimPhase?.price
+                  ? ethers.utils.formatUnits(activeClaimPhase.price)
+                  : "N/A"}
+            </b>
+          </h5>
+
           <h5 className="nft-font">
             {" "}
             NFT Owned:{" "}
