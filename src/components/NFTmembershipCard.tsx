@@ -171,7 +171,7 @@ export default function NFTMembership() {
                     ))
                   ) : (
                     <div>
-                      <p>Eligible to claim</p>
+                      <p className="text-portal text-lg font-bold">Eligible to claim</p>
                       <div className="">
 
                         <div className="claimValue mt-4 mb-4">
