@@ -151,7 +151,7 @@ export default function NFTMembership() {
 
           <h5 className="nft-font">
             {" "}
-            NFT Supply:{" "}
+            Total Claimed:{" "}
             <b className="text-bold text-portal">
               {totalClaimedSupplyisLoading
                 ? "Loading...."
