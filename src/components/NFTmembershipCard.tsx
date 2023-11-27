@@ -122,6 +122,29 @@ export default function NFTMembership() {
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
         <div className="flex gap-2">
+          <h5 className="nft-font">
+            {" "}
+            NFT Owned:{" "}
+            <b className="text-bold text-portal">
+              {ownedNFTsIsLoading ? "Loading...." : `${ownedNFTs?.length}`}
+            </b>
+          </h5>
+
+          <h5 className="nft-font">
+            {" "}
+            NFT Supply:{" "}
+            <b className="text-bold text-portal">
+              {totalClaimedSupplyisLoading
+                ? "Loading...."
+                : ` ${totalClaimedSupply?.toNumber()} `}
+              /{" "}
+              {totalSupplyisLoading
+                ? "Loading...."
+                : ` ${totalSupply?.toNumber()} `}
+            </b>
+          </h5>
+        </div>
+        <div className="flex gap-2">
         <h5 className="nft-font">
   {" "}
   Claim Phase:{" "}
@@ -137,27 +160,6 @@ export default function NFTMembership() {
             {activeClaimPhase?.price
                   ? ethers.utils.formatUnits(activeClaimPhase.price)
                   : "N/A"}
-            </b>
-          </h5>
-
-          <h5 className="nft-font">
-            {" "}
-            NFT Owned:{" "}
-            <b className="text-bold text-portal">
-              {ownedNFTsIsLoading ? "Loading...." : `${ownedNFTs?.length}`}
-            </b>
-          </h5>
-          <h5 className="nft-font">
-            {" "}
-            NFT Supply:{" "}
-            <b className="text-bold text-portal">
-              {totalClaimedSupplyisLoading
-                ? "Loading...."
-                : ` ${totalClaimedSupply?.toNumber()} `}
-              /{" "}
-              {totalSupplyisLoading
-                ? "Loading...."
-                : ` ${totalSupply?.toNumber()} `}
             </b>
           </h5>
         </div>
@@ -177,7 +179,7 @@ export default function NFTMembership() {
                           <input className="claimInput" type="number" value={claimQuantity} />
                           <button className="claimBtn" onClick={increment}>+</button>
                         </div>
-                        
+
                         <Web3Button
                           contractAddress={tokenizedBronzeAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
