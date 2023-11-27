@@ -68,8 +68,9 @@ const [claimQuantity, setClaimQuantity] = useState(1);
               <MediaRenderer src={contractMetadata?.image} />
             </div>
             <div>
-              <h1>{contractMetadata.name}</h1>
-              <p>{contractMetadata.description}</p>
+            <h1>{contractMetadata?.name}</h1>
+            <p>{contractMetadata?.description}</p>
+
   
               {!isActiveClaimPhaseLoading ? (
                 <div>
