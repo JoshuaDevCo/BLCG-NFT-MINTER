@@ -81,9 +81,9 @@ export default function Navbar() {
     </div>
    
   </div> 
-  <div className="drawer-side bg-side z-[10]">
+  <div className="drawer-si z-[10]">
     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 min-h-full bg-base-200">
+    <ul className="menu p-4 w-80 min-h-full bg-side">
     <SidebarHeader className="mt-5 mb-5">
         <img src="https://www.billionlocalcoin.io/public/images/logo.png"
  alt="Logo" className="w-20 h-20 mr-2" />
