@@ -11,16 +11,19 @@ import {
   useNFT,
   useOwnedNFTs,
   useTotalCount,
+  useActiveClaimConditionForWallet,
+  useTotalCirculatingSupply,
 } from "@thirdweb-dev/react";
 import { tokenizedBronzeAddress } from "../const/contractAddresses";
 import TimerGrid from "./dashboard/TimerGrid";
 import Mint from "./dashboard/Mint";
+import { ethers } from "ethers";
 
 export default function NFTMembership() {
   const address = useAddress();
   const maxClaimQuantity = 2;
   const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
-  
+
   const { data: nft, isLoading, error } = useNFT(contract, "0");
   const {
     data: contractMetadata,
@@ -33,20 +36,17 @@ export default function NFTMembership() {
   } = useTotalCount(contract);
 
   const {
-    data:activeClaimPhase,
-    isLoading:isActiveClaimPhaseLoading
-} = useActiveClaimConditionForWallet(contract, address);
+    data: activeClaimPhase,
+    isLoading: isActiveClaimPhaseLoading,
+  } = useActiveClaimConditionForWallet(contract, address);
 
-const {
+  const {
     data: claimIneligibilityReasons,
     isLoading: isClaimIneligibilityReasonsLoading,
-  } = useClaimIneligibilityReasons(
-    contract,
-    {
-      walletAddress: address || "",
-      quantity: 1,
-    }
-  );
+  } = useClaimIneligibilityReasons(contract, {
+    walletAddress: address || "",
+    quantity: 1,
+  });
 
   const [claimQuantity, setClaimQuantity] = useState(1);
   const increment = () => {
@@ -60,13 +60,14 @@ const {
     }
   };
 
-const {
-    data:totalClaimed,
+  const {
+    data: totalClaimed,
     isLoading: isTotalClaimedLoading,
-} = useTotalCirculatingSupply(contract);
+  } = useTotalCirculatingSupply(contract);
 
-const maxClaimamble = parseInt(activeClaimPhase?.maxClaimablePerWallet || "0");
-
+  const maxClaimamble = parseInt(
+    activeClaimPhase?.maxClaimablePerWallet || "0"
+  );
 
   const {
     data: ownedNFTs,
@@ -106,65 +107,80 @@ const maxClaimamble = parseInt(activeClaimPhase?.maxClaimablePerWallet || "0");
 
   return (
     <SlidingCard className="rounded-[12px] border-[2px] border-portal bg-clip-border shadow-md shadow-[#27ff0059] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none !p-[14px] mt-4 mb-4">
-{!isContractMetadataLoading && (
+      {!isActiveClaimPhaseLoading && (
+        <div>
+          <div className="collectionImage">
+            <MediaRenderer src={contractMetadata?.image} />
+          </div>
           <div>
-            <div className="collectionImage">
-              <MediaRenderer src={contractMetadata?.image} />
-            </div>
-            <div>
             <h1>{contractMetadata?.name}</h1>
             <p>{contractMetadata?.description}</p>
 
-  
-              {!isActiveClaimPhaseLoading ? (
-                <div>
-                  <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
-                  <p>
-                   Price: {activeClaimPhase?.price ? ethers.utils.formatUnits(activeClaimPhase.price) : 'N/A'}
-                  </p>                
-                  </div>
-              ) : (
-                <p>Loading...</p>
-              )}
-              {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
-                <p>Claimed: {totalClaimed?.toNumber()} / {totalSupply?.toNumber()}</p>
-              ) : (
-                <p>Loading...</p>
-              )}
-  
-              {address ? (
-                !isClaimIneligibilityReasonsLoading ? (
-                  claimIneligibilityReasons.length! > 0 ? (
-                    claimIneligibilityReasons?.map((reason, index) => (
-                      <p key={index}>{reason}</p>
-                    ))
-                  ) : (
-                    <div>
-                      <p>Eligible to claim</p>
-                      <div className="claimContainer">
-                        <div className="claimValue">
-                          <button className="claimBtn" onClick={decrement}>-</button>
-                          <input className="claimInput" type="number" value={claimQuantity} />
-                          <button className="claimBtn" onClick={increment}>+</button>
-                        </div>
-                        <Web3Button
-                          contractAddress={tokenizedBronzeAddress}
-                          action={(contract) => contract.erc721.claim(claimQuantity)}
-                        >
-                          Claim NFT
-                        </Web3Button>
-                      </div>
-                    </div>
-                  )
+            {!isActiveClaimPhaseLoading ? (
+              <div>
+                <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
+                <p>
+                  Price:{" "}
+                  {activeClaimPhase?.price
+                    ? ethers.utils.formatUnits(activeClaimPhase.price)
+                    : "N/A"}
+                </p>
+              </div>
+            ) : (
+              <p>Loading...</p>
+            )}
+            {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
+              <p>
+                Claimed: {totalClaimed?.toNumber()} /{" "}
+                {totalSupply?.toNumber()}
+              </p>
+            ) : (
+              <p>Loading...</p>
+            )}
+
+            {address ? (
+              !isClaimIneligibilityReasonsLoading ? (
+                claimIneligibilityReasons?.length! > 0 ? (
+                  claimIneligibilityReasons?.map((reason, index) => (
+                    <p key={index}>{reason}</p>
+                  ))
                 ) : (
-                  <p>Checking Eligibility...</p>
+                  <div>
+                    <p>Eligible to claim</p>
+                    <div className="claimContainer">
+                      <div className="claimValue">
+                        <button className="claimBtn" onClick={decrement}>
+                          -
+                        </button>
+                        <input
+                          className="claimInput"
+                          type="number"
+                          value={claimQuantity}
+                        />
+                        <button className="claimBtn" onClick={increment}>
+                          +
+                        </button>
+                      </div>
+                      <Web3Button
+                        contractAddress={tokenizedBronzeAddress}
+                        action={(contract) =>
+                          contract.erc721.claim(claimQuantity)
+                        }
+                      >
+                        Claim NFT
+                      </Web3Button>
+                    </div>
+                  </div>
                 )
               ) : (
-                <p>Connect Wallet to claim</p>
-              )}
-            </div>
+                <p>Checking Eligibility...</p>
+              )
+            ) : (
+              <p>Connect Wallet to claim</p>
+            )}
           </div>
-        )}
+        </div>
+      )}
       <ImageContainer>
         <img src={contractMetadata.image} alt="Token Logo" />
       </ImageContainer>
@@ -178,21 +194,27 @@ const maxClaimamble = parseInt(activeClaimPhase?.maxClaimablePerWallet || "0");
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata.description}</h5>
         <div className="flex gap-2">
-        {!isActiveClaimPhaseLoading ? (
-                <div>
-                  <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
-                  <p>
-                   Price: {activeClaimPhase?.price ? ethers.utils.formatUnits(activeClaimPhase.price) : 'N/A'}
-                  </p>                
-                  </div>
-              ) : (
-                <p>Loading...</p>
-              )}
-              {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
-                <p>Claimed: {totalClaimed?.toNumber()} / {totalSupply?.toNumber()}</p>
-              ) : (
-                <p>Loading...</p>
-              )}
+          {!isActiveClaimPhaseLoading ? (
+            <div>
+              <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
+              <p>
+                Price:{" "}
+                {activeClaimPhase?.price
+                  ? ethers.utils.formatUnits(activeClaimPhase.price)
+                  : "N/A"}
+              </p>
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
+          {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
+            <p>
+              Claimed: {totalClaimed?.toNumber()} /{" "}
+              {totalSupply?.toNumber()}
+            </p>
+          ) : (
+            <p>Loading...</p>
+          )}
           <h5 className="nft-font">
             {" "}
             NFT Owned:{" "}
@@ -207,7 +229,7 @@ const maxClaimamble = parseInt(activeClaimPhase?.maxClaimablePerWallet || "0");
               {totalClaimedSupplyisLoading
                 ? "Loading...."
                 : ` ${totalClaimedSupply?.toNumber()} `}
-              /
+              /{" "}
               {totalSupplyisLoading
                 ? "Loading...."
                 : ` ${totalSupply?.toNumber()} `}
@@ -256,7 +278,11 @@ const SlidingCard = styled.section`
   }
 `;
 
-const CardContent = styled.div`
+interface CardContentProps {
+  mobileCentered?: boolean;
+}
+
+const CardContent = styled.div<CardContentProps>`
   flex: 3;
   display: flex;
   flex-direction: column;
