@@ -180,7 +180,7 @@ export default function NFTMembership() {
                           contractAddress={tokenizedBronzeAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
                         >
-                          Claim NFT
+                          Claim and Mint NFT
                         </Web3Button>
                       </div>
                     </div>
