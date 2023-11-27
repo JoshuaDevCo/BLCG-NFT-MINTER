@@ -35,6 +35,11 @@ body {
   background-color: #ebc45b;
 }
 
+.tagen-flex{
+  display:flex;
+  flex-direction: column;
+}
+
 .show {
   opacity: 1 !important;
   visibility: visible !important;

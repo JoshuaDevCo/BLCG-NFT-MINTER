@@ -121,7 +121,8 @@ export default function NFTMembership() {
         </h6>
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
-        <div className="flex gap-2">
+        
+        <div className="tagen-flex gap-2">
         <h5 className="nft-font">
   {" "}
   Claim Phase:{" "}
@@ -139,8 +140,7 @@ export default function NFTMembership() {
                   : "N/A"}
             </b>
           </h5>
-        </div>
-        <div className="flex gap-2">
+        
           <h5 className="nft-font">
             {" "}
             NFT Owned:{" "}
