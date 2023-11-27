@@ -321,7 +321,7 @@ body {
 
 .bg-portal {
   --tw-bg-opacity: 1;
-  background-color: #111827;
+  background-color: rgb(0 0 0);
 }
 
 .border-portal {
