@@ -170,12 +170,14 @@ export default function NFTMembership() {
                   ) : (
                     <div>
                       <p>Eligible to claim</p>
-                      <div className="claimContainer">
+                      <div className="">
+
                         <div className="claimValue">
                           <button className="claimBtn" onClick={decrement}>-</button>
                           <input className="claimInput" type="number" value={claimQuantity} />
                           <button className="claimBtn" onClick={increment}>+</button>
                         </div>
+                        
                         <Web3Button
                           contractAddress={tokenizedBronzeAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
