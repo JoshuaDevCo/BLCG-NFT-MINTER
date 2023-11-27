@@ -13,6 +13,7 @@ import {
 } from "@thirdweb-dev/react";
 import { tokenizedBronzeAddress } from "../const/contractAddresses";
 import TimerGrid from "./dashboard/TimerGrid";
+import Mint from "./dashboard/Mint";
 
 export default function NFTMembership() {
   const address = useAddress();
@@ -68,6 +69,7 @@ export default function NFTMembership() {
 
   return (
     <SlidingCard className="rounded-[12px] border-[2px] border-portal bg-clip-border shadow-md shadow-[#27ff0059] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none !p-[14px] mt-4 mb-4">
+     <Mint/>
       <ImageContainer>
         <img src={contractMetadata.image} alt="Token Logo" />
       </ImageContainer>
