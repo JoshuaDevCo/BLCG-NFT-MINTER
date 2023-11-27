@@ -375,7 +375,7 @@ const Mintfeature = () => {
                       }
                      
                       action={(cntr) => cntr.erc721.claim(quantity)}
-                      isDisabled={!canClaim || buttonLoading}
+                      isDisabled={(!canClaim || buttonLoading) ?? false} // Check for undefined and provide a default value of false
                       onError={(err) => {
                         console.error(err);
                         console.log({ err });
