@@ -137,7 +137,7 @@ export default function NFTMembership() {
             <b className="text-bold text-portal">
             {activeClaimPhase?.price
                   ? ethers.utils.formatUnits(activeClaimPhase.price)
-                  : "N/A"}
+                  : "N/A"} BNB
             </b>
           </h5>
         
