@@ -75,8 +75,10 @@ const [claimQuantity, setClaimQuantity] = useState(1);
               {!isActiveClaimPhaseLoading ? (
                 <div>
                   <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
-                  <p>Price: {ethers.utils.formatUnits(activeClaimPhase?.price!)}</p>
-                </div>
+                  <p>
+                   Price: {activeClaimPhase?.price ? ethers.utils.formatUnits(activeClaimPhase.price) : 'N/A'}
+                  </p>                
+                  </div>
               ) : (
                 <p>Loading...</p>
               )}
