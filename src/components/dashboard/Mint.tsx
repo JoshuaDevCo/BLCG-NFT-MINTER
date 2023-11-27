@@ -1,7 +1,8 @@
-import { MediaRenderer, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useContract, useContractMetadata, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react'
+import { MediaRenderer, Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useContract, useContractMetadata, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react'
 import React, { useState } from 'react'
 import { tokenizedBronzeAddress } from '../../const/contractAddresses';
 import { ethers } from "ethers";
+import { RouterProvider } from 'react-router-dom';
 
 
 const Mint = () => {
@@ -58,20 +59,19 @@ const [claimQuantity, setClaimQuantity] = useState(1);
     }
   };
 
-    return (
+  return (
     <div className="container">
-     <div>
+      <div>
         {!isContractMetadataLoading && (
-        <div className="collectionImage">
-           <MediaRenderer
-            src={contractMetadata?.image} 
-            />
-        </div>
-        <div>
-            <h1>{contractMetadata.name}</h1>
-            <p>{contractMetadata.description}</p>
-
-            {!isActiveClaimPhaseLoading ? (
+          <div>
+            <div className="collectionImage">
+              <MediaRenderer src={contractMetadata?.image} />
+            </div>
+            <div>
+              <h1>{contractMetadata.name}</h1>
+              <p>{contractMetadata.description}</p>
+  
+              {!isActiveClaimPhaseLoading ? (
                 <div>
                   <p>Claim Phase: {activeClaimPhase?.metadata?.name}</p>
                   <p>Price: {ethers.utils.formatUnits(activeClaimPhase?.price!)}</p>
@@ -79,13 +79,13 @@ const [claimQuantity, setClaimQuantity] = useState(1);
               ) : (
                 <p>Loading...</p>
               )}
-              {!isTotalSupplyLoading && !isTotalClaimSupplyLoading ? (
-                <p>Claimed: {totalClaimSupply?.toNumber()} / {totalSupply?.toNumber()}</p>
+              {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
+                <p>Claimed: {totalClaimed?.toNumber()} / {totalSupply?.toNumber()}</p>
               ) : (
                 <p>Loading...</p>
               )}
-
-{address ? (
+  
+              {address ? (
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
                     claimIneligibilityReasons?.map((reason, index) => (
@@ -96,25 +96,16 @@ const [claimQuantity, setClaimQuantity] = useState(1);
                       <p>Eligible to claim</p>
                       <div className="claimContainer">
                         <div className="claimValue">
-                          <button
-                            className="claimBtn"
-                            onClick={decrement}
-                          >-</button>
-                          <input
-                            className="claimInput"
-                            type="number"
-                            value={claimQuantity}
-                          />
-                          <button
-                            className="claimBtn"
-                            onClick={increment}
-                          >+</button>
+                          <button className="claimBtn" onClick={decrement}>-</button>
+                          <input className="claimInput" type="number" value={claimQuantity} />
+                          <button className="claimBtn" onClick={increment}>+</button>
                         </div>
                         <Web3Button
                           contractAddress={tokenizedBronzeAddress}
-                          action={(contract) =>  contract.erc721.claim(claimQuantity)}
-                          onSuccess={() => router.push(`/profile/${address}`)}
-                        >Claim NFT</Web3Button>
+                          action={(contract) => contract.erc721.claim(claimQuantity)}
+                        >
+                          Claim NFT
+                        </Web3Button>
                       </div>
                     </div>
                   )
@@ -124,12 +115,12 @@ const [claimQuantity, setClaimQuantity] = useState(1);
               ) : (
                 <p>Connect Wallet to claim</p>
               )}
-
-        </div>
+            </div>
+          </div>
         )}
-     </div>
+      </div>
     </div>
-  )
-}
+  );
+  
 
 export default Mint
