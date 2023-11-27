@@ -503,3 +503,29 @@ a {
     display: none; /* Hide on desktop screens */
   }
 }
+
+.claimContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.claimValue {
+  font-size: 2rem;
+}
+.claimInput {
+  color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  border: none;
+  margin: 0px 0.25rem;
+  width: 30%;
+}
+.claimBtn {
+  background-color: #fff;
+  color: #333;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
