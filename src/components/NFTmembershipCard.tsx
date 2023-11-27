@@ -255,8 +255,8 @@ const ImageContainer = styled.div`
   justify-content: center;
 
   img {
-    max-height: 25rem;
-    max-width: 25rem;
+    max-height: 20rem;
+    max-width: 20rem;
     border-radius: 10%;
     object-fit: cover;
   }
