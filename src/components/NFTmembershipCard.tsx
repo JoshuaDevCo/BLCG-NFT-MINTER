@@ -164,18 +164,36 @@ export default function NFTMembership() {
             </b>
           </h5>
         </div>
-        <Web3Button
-          className="linear container mt-3 flex items-center justify-center rounded-xl bg-brand-500 px-4 py-4 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
-          contractAddress={tokenizedBronzeAddress}
-          action={(tokenizednftContract) =>
-            tokenizednftContract.erc721.claim(1)
-          }
-          onSuccess={() => {
-            alert("NFT Claimed");
-          }}
-        >
-          Claim and Mint
-        </Web3Button>
+        {address ? (
+                !isClaimIneligibilityReasonsLoading ? (
+                  claimIneligibilityReasons?.length! > 0 ? (
+                    claimIneligibilityReasons?.map((reason, index) => (
+                      <p key={index}>{reason}</p>
+                    ))
+                  ) : (
+                    <div>
+                      <p>Eligible to claim</p>
+                      <div className="claimContainer">
+                        <div className="claimValue">
+                          <button className="claimBtn" onClick={decrement}>-</button>
+                          <input className="claimInput" type="number" value={claimQuantity} />
+                          <button className="claimBtn" onClick={increment}>+</button>
+                        </div>
+                        <Web3Button
+                          contractAddress={tokenizedBronzeAddress}
+                          action={(contract) => contract.erc721.claim(claimQuantity)}
+                        >
+                          Claim NFT
+                        </Web3Button>
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  <p>Checking Eligibility...</p>
+                )
+              ) : (
+                <p>Connect Wallet to claim</p>
+              )}
       </CardContent>
     </SlidingCard>
   );
