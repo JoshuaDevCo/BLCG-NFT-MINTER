@@ -65,7 +65,7 @@ const NFTStakeCard = () => {
     <Card extra={"w-full h-full p-3"}>
          <div className="flex flex-col w-full lg:flex-row">
         <div className="grid flex-grow card bg-dark rounded-box place-items-center"><h4 className="px-2 mb-2 text-xl font-bold text-navy-700 dark:text-white">
-          My Tokenized NFT 
+          My Golden Pass NFT 
         </h4>
         <div>
         {myTokenizedNFTs?.map((nft) => (
@@ -80,21 +80,21 @@ const NFTStakeCard = () => {
               />
             </center>
             )}
-        <h5 className="card-title">{nft.metadata.name}</h5>
-        <div className="badge badge-primary mt-2 mb-2">Not Mining</div>
-        <Web3Button
+        <h5 className="card-title text-center">{nft.metadata.name}</h5>
+        {/* <div className="badge badge-primary mt-2 mb-2">Not Mining</div> */}
+        {/* <Web3Button
       contractAddress={stakingAddress}
       action={() => StakeNFT(nft.metadata.id)}
     >
       Start Mining Reward
-    </Web3Button>
+    </Web3Button> */}
           </div>
           </div>
 ))} 
 </div>
         </div> 
   <div className="divider lg:divider-horizontal"></div> 
-  <div className="grid flex-grow card bg-dark rounded-box place-items-center">
+  {/* <div className="grid flex-grow card bg-dark rounded-box place-items-center">
   <h4 className="px-2 mb-2 text-xl font-bold text-navy-700 dark:text-white">
           Active Mining NFT 
         </h4> 
@@ -105,7 +105,7 @@ const NFTStakeCard = () => {
                   key={stakedToken.toString()}
                 />
               ))}
-              </div>
+              </div> */}
 </div>
     </Card>
   );
