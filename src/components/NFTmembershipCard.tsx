@@ -184,14 +184,6 @@ export default function NFTMembership() {
                           contractAddress={tokenizedBronzeAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
                           className="claim-button"
-                          // style={{
-                          //   minWidth: '218px',
-                          //   minHeight: '50px',
-                          //   border: '3px solid #ebc45b',
-                          //   fontWeight: 900,
-                          //   textTransform: 'uppercase',
-                          //   background: '#27ff00',
-                          // }}
                         >
                           Claim and Mint NFT
                         </Web3Button>
