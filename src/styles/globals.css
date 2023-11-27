@@ -510,17 +510,7 @@ a {
   justify-content: flex-start;
   align-items: center;
 }
-.claimValue {
-  font-size: 2rem;
-}
-.claimInput {
-  color: #fff;
-  padding: 1rem 1rem;
-  border-radius: 4px;
-  border: none;
-  margin: 0px 0.25rem;
-  width: 30%;
-}
+
 .claimBtn {
   background-color: #fff;
   color: #333;
