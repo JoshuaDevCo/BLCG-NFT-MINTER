@@ -151,7 +151,7 @@ export default function NFTMembership() {
 
           <h5 className="nft-font">
             {" "}
-            Total Claimed:{" "}
+            Remaining:{" "}
             <b className="text-bold text-portal">
               {totalClaimedSupplyisLoading
                 ? "Loading...."
@@ -159,7 +159,7 @@ export default function NFTMembership() {
               /{" "}
               {totalSupplyisLoading
                 ? "Loading...."
-                : ` ${totalSupply?.toNumber()} `}
+                : ` ${totalSupply?.toNumber()} `} Minted
             </b>
           </h5>
         </div>
