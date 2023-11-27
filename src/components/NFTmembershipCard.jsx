@@ -123,7 +123,7 @@ const SlidingCard = styled.section`
   ${cardStyles};
   display: flex;
   flex-direction: row-reverse;
-  background: hsl(220.91deg 39.29% 10.98%);
+  background: #000;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0rem;
