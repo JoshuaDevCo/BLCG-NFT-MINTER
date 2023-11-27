@@ -121,6 +121,6 @@ const [claimQuantity, setClaimQuantity] = useState(1);
       </div>
     </div>
   );
-  
+}
 
 export default Mint
