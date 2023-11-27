@@ -13,6 +13,7 @@ import {
   useTotalCount,
   useActiveClaimConditionForWallet,
   useTotalCirculatingSupply,
+  MediaRenderer,
 } from "@thirdweb-dev/react";
 import { tokenizedBronzeAddress } from "../const/contractAddresses";
 import TimerGrid from "./dashboard/TimerGrid";
@@ -129,7 +130,7 @@ export default function NFTMembership() {
             ) : (
               <p>Loading...</p>
             )}
-            {!isTotalSupplyLoading && !isTotalClaimedLoading ? (
+            {!totalSupplyisLoading && !isTotalClaimedLoading ? (
               <p>
                 Claimed: {totalClaimed?.toNumber()} /{" "}
                 {totalSupply?.toNumber()}
