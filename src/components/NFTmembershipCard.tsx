@@ -122,6 +122,25 @@ export default function NFTMembership() {
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
         <div className="flex gap-2">
+        <h5 className="nft-font">
+  {" "}
+  Claim Phase:{" "}
+  <b className="text-bold text-portal">
+    {activeClaimPhase?.metadata?.name || "N/A"}
+  </b>
+</h5>
+
+          <h5 className="nft-font">
+            {" "}
+            Price:{" "}
+            <b className="text-bold text-portal">
+            {activeClaimPhase?.price
+                  ? ethers.utils.formatUnits(activeClaimPhase.price)
+                  : "N/A"}
+            </b>
+          </h5>
+        </div>
+        <div className="flex gap-2">
           <h5 className="nft-font">
             {" "}
             NFT Owned:{" "}
@@ -144,25 +163,6 @@ export default function NFTMembership() {
             </b>
           </h5>
         </div>
-        <div className="flex gap-2">
-        <h5 className="nft-font">
-  {" "}
-  Claim Phase:{" "}
-  <b className="text-bold text-portal">
-    {activeClaimPhase?.metadata?.name || "N/A"}
-  </b>
-</h5>
-
-          <h5 className="nft-font">
-            {" "}
-            Price:{" "}
-            <b className="text-bold text-portal">
-            {activeClaimPhase?.price
-                  ? ethers.utils.formatUnits(activeClaimPhase.price)
-                  : "N/A"}
-            </b>
-          </h5>
-        </div>
         {address ? (
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
@@ -174,7 +174,7 @@ export default function NFTMembership() {
                       <p>Eligible to claim</p>
                       <div className="">
 
-                        <div className="claimValue">
+                        <div className="claimValue mt-4 mb-4">
                           <button className="claimBtn" onClick={decrement}>-</button>
                           <input className="input input-bordered w-full nft-width" type="number" value={claimQuantity} />
                           <button className="claimBtn" onClick={increment}>+</button>
