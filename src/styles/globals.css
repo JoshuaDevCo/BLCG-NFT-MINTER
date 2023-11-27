@@ -516,10 +516,10 @@ a {
 }
 
 .claimBtn {
-  background-color: #fff;
+  background-color: #ebc45b;
   border: none;
-  border-radius: 13px;
+  border-radius: 10px;
   color: #333;
   cursor: pointer;
-  padding: 13px;
+  padding: 19px;
 }
