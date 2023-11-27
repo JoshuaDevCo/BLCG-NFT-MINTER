@@ -176,7 +176,7 @@ export default function NFTMembership() {
 
                         <div className="claimValue">
                           <button className="claimBtn" onClick={decrement}>-</button>
-                          <input className="input input-bordered w-full max-w-xs" type="number" value={claimQuantity} />
+                          <input className="input input-bordered w-full nft-width" type="number" value={claimQuantity} />
                           <button className="claimBtn" onClick={increment}>+</button>
                         </div>
 

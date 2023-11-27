@@ -511,11 +511,15 @@ a {
   align-items: center;
 }
 
+.nft-width {
+  max-width: 8rem;
+}
+
 .claimBtn {
   background-color: #fff;
-  color: #333;
-  padding: 1rem 1rem;
-  border-radius: 4px;
   border: none;
+  border-radius: 13px;
+  color: #333;
   cursor: pointer;
+  padding: 13px;
 }
