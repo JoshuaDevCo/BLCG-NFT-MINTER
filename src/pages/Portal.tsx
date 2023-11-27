@@ -17,6 +17,7 @@ import TokenomicsCard from "../components/dashboard/TokenomicsCard";
 import ProjectInfoCard from "../components/dashboard/ProjectInfoCard";
 import NFTMembership from "../components/NFTmembershipCard";
 import ButtomNavbar from "../components/dashboard/ButtomNavbar";
+import Mintfeature from "../components/dashboard/Minterfeature";
 
 export default function Home() {
   useEffect(() => {
@@ -55,7 +56,8 @@ export default function Home() {
   return (
     <Section>
       <NavBar />
-      <NFTMembership /> 
+      <NFTMembership />
+      <Mintfeature/> 
       <div className="grid">
         <div className="row__two">
           <ProjectInfoCard />
