@@ -17,7 +17,6 @@ import TokenomicsCard from "../components/dashboard/TokenomicsCard";
 import ProjectInfoCard from "../components/dashboard/ProjectInfoCard";
 import NFTMembership from "../components/NFTmembershipCard";
 import ButtomNavbar from "../components/dashboard/ButtomNavbar";
-import Mintfeature from "../components/dashboard/Minterfeature";
 
 export default function Home() {
   useEffect(() => {
