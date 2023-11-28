@@ -1,7 +1,7 @@
 import { ConnectWallet } from '@thirdweb-dev/react';
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom"; // Import NavLink
-import TRCLogo from "../assets/TRC.png"
+import BLCGLogo from "../assets/BLCG-PASS.png"
 
 
 const Navbar = () => {
@@ -13,11 +13,12 @@ const Navbar = () => {
 
   return (
     <div className="navbar menu-lg trcNavColor">
-      <div className="navbar-start">
+      <div className="navbar-start gap-2">
         <img
-          src={TRCLogo}
+          src={BLCGLogo}
           width={60}
         />
+         BLCG
       </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal  z-[10] px-1">

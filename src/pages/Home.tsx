@@ -8,6 +8,9 @@ import Stats from "../components/stats";
 import NFTPackage from "../components/NFTPackage";
 import TokenomicsCard from "../components/TokenomicsCard";
 import Faqs from "../components/Faqs";
+import FeaturesList from "../components/FeaturesCard";
+import AboutPage from "../components/content";
+import ContentSection from "../components/ContentSection";
 
 
 export default function Home() {
@@ -17,12 +20,7 @@ export default function Home() {
      <Navbar/>
      <Hero/>
      <LaunchCard/>
-     <Features/>
-     <Stats/>
-     <NFTPackage/>
-     <TokenomicsCard/>
-     <Faqs/>
-     <Footer/>
+     <ContentSection/>
     </>
   );
 }

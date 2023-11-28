@@ -57,7 +57,6 @@ export default function Home() {
     <Section>
       <NavBar />
       <NFTMembership />
-      <Mintfeature/> 
       <div className="grid">
         <div className="row__two">
           <ProjectInfoCard />

@@ -25,17 +25,18 @@ import StakeNFT from "./pages/StakeNFT";
 import StakeToken from "./pages/StakeToken";
 import FreshMint from "./pages/Freshmint";
 import Workshop from "./pages/Workshop";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
+  {
+    path: "/", 
+    element: <Home />,
+  },
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/", 
-        element: <Portal />,
-      },
       {
         path: "/smart-portal", 
         element: <Portal />,
@@ -59,11 +60,6 @@ const router = createBrowserRouter([
       {
         path: "/workshop",
         element: <Workshop />,
-      },
-      // Add a catch-all route for unmatched routes
-      {
-        path: "*",
-        element: <Portal />, // Redirect to "/smart-portal"
       },
     ],
   },

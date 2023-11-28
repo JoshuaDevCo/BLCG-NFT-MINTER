@@ -530,4 +530,166 @@ a {
   padding: 19px;
 }
 
+.heroFont{
+  text-transform: uppercase;
+  font-weight: bolder;
+}
 
+
+.blc-h1 {
+  font-size: 91px;
+  margin-top: -16px;
+  text-shadow: -5px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+/* Add custom CSS for responsiveness and expandability */
+@media (max-width: 991px) {
+        
+  .blc-h1 {
+font-size: 50px;
+margin-top: -16px;
+}
+
+  .main-p {
+      font-size: 14px;
+      margin-top: -9px;
+      line-height:1.5;
+
+  }
+
+  .main-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .social-icon-item {
+      margin: 0 5px;
+  }
+
+  /* Adjust other styles as needed */
+}
+
+@media (max-width: 767px) {
+
+  .blc-h1 {
+      font-size: 30px;
+      padding:4px;
+  }
+
+  .main-p {
+      font-size: 15px;
+  }
+}
+
+
+.features {
+	margin-bottom: 100px;
+}
+
+.features__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 48px;
+}
+
+.features__head {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.features__list {
+	display: grid;
+	grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
+	width: 100%;
+	gap: 24px;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.features__icon {
+	width: 148px;
+	height: 148px;
+	border-radius: 24px;
+	margin-bottom: 24px;
+	position: relative;
+}
+
+.features__icon img {
+	object-fit: cover;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.features__title {
+	margin-bottom: 8px;
+}
+
+.features__title p {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.features__description {
+}
+
+.features__description p {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.coin-icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+
+.video-container {
+  position: relative;
+  overflow: hidden
+}
+
+.tagen-txt {
+  color: #caaa0c;
+  border-bottom: 2px solid #00fe0a;
+  padding-bottom: 10px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+gd-text{
+    font-family: "FugazOne-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 5.25rem;
+    line-height: 7.75rem;
+    color: #E3C69D;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
