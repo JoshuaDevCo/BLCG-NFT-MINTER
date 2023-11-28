@@ -21,6 +21,7 @@ export default function Home() {
      <Hero/>
      <LaunchCard/>
      <ContentSection/>
+     <Footer/>
     </>
   );
 }
