@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"; // Import NavLink
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+    <footer className="p-4 bg-dark md:p-8 lg:p-10 dark:bg-gray-800">
     <div className="mx-auto max-w-screen-xl text-center">
         <a href="#" className="flex justify-center items-center text-2xl font-semibold text-portal dark:text-white">
             Flowbite    
@@ -15,16 +15,16 @@ const Footer = () => {
                 <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
             </li>
             <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6">Premium</a>
+                <a href="#" className="mr-4 hover:underline md:mr-6">cryptorization</a>
             </li>
             <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6 ">Campaigns</a>
+                <a href="#" className="mr-4 hover:underline md:mr-6 ">Tokenomics</a>
             </li>
             <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6">Blog</a>
+                <a href="#" className="mr-4 hover:underline md:mr-6">News</a>
             </li>
             <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6">Affiliate Program</a>
+                <a href="#" className="mr-4 hover:underline md:mr-6">Market</a>
             </li>
             <li>
                 <a href="#" className="mr-4 hover:underline md:mr-6">FAQs</a>
