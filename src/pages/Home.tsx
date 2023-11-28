@@ -19,7 +19,6 @@ export default function Home() {
     <HeaderCard/>
      <Navbar/>
      <Hero/>
-     <LaunchCard/>
      <ContentSection/>
      <Footer/>
     </>
