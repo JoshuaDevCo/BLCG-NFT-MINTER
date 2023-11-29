@@ -95,7 +95,45 @@ const Hero = () => {
         <h6 className="nft-font text-center text-portal">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
-       <center> <FromTimer /></center>
+       <center> <FromTimer />
+       {address ? (
+                !isClaimIneligibilityReasonsLoading ? (
+                  claimIneligibilityReasons?.length! > 0 ? (
+                    claimIneligibilityReasons?.map((reason, index) => (
+                      <p key={index}>{reason}</p>
+                    ))
+                  ) : (
+                    <div>
+                      <p className="text-portal text-lg font-bold">Eligible to claim</p>
+                      <div className="">
+
+                        <div className="claimValue mt-4 mb-4">
+                          <button className="claimBtn" onClick={decrement}>-</button>
+                          <input className="input input-bordered w-full nft-width" type="number" value={claimQuantity} />
+                          <button className="claimBtn" onClick={increment}>+</button>
+                        </div>
+
+                        <Web3Button
+                          contractAddress={tokenizedBronzeAddress}
+                          action={(contract) => contract.erc721.claim(claimQuantity)}
+                          className="min-w-218 min-h-50 border-3 border-solid border-ebc45b font-bold uppercase bg-green-500 animate-pulse"
+                          style={{
+                                animationDuration: '1s', // Adjust the duration as needed
+                             }}
+                        >
+                          Claim and Mint NFT
+                        </Web3Button>
+                      </div>
+                    </div>
+                  )
+                ) : (
+                  <p>Checking Eligibility...</p>
+                )
+              ) : (
+                <p>Connect Wallet to claim</p>
+              )}
+       </center>
+
         <div className="form-control mt-6">
           <button className="btn ">Login</button>
         </div>
