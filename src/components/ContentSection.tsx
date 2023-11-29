@@ -9,7 +9,7 @@ const ContentSection = () => {
     <section className="bg-white dark:bg-gray-900">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white gd-font">BLCG GOLDEN PASS</h2>
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black gd-font">BLCG GOLDEN PASS</h2>
           <p className="">
           Dive into the exclusive realm of the BLCG NFT Pass Golden Collection—a rare opportunity unlocking entry to BLC Gold IDO, Mining, and Staking. With only 5000 passes available, each pass serves as your golden ticket to engage in various activities within the thriving BLCG Coin ecosystem.
         </p>
