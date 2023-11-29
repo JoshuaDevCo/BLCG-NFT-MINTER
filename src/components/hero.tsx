@@ -96,7 +96,8 @@ const Hero = () => {
         <h6 className="nft-font text-center text-portal">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
-       <center> <FromTimer />
+        <FromTimer />
+       <center className="mb-4 mt-4">
        {address ? (
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
@@ -104,7 +105,7 @@ const Hero = () => {
                       <p key={index}>{reason}</p>
                     ))
                   ) : (
-                    <div className="mb-4 mt-4">
+                    <div>
                       <p className="text-portal text-lg font-bold">Eligible to claim</p>
                       <div className="">
 
