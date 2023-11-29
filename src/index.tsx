@@ -1,6 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import {
   ThirdwebProvider,
   ConnectWallet,
@@ -85,6 +88,18 @@ root.render(
         trustWallet({ recommended: true }),
       ]}
     >
+      <ToastContainer
+position="bottom-left"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
     <RouterProvider router={router} />
     </ThirdwebProvider>
   </React.StrictMode>

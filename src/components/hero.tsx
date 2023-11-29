@@ -7,8 +7,11 @@ import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
 import { ConnectWallet, Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
 import { tokenizedBronzeAddress } from '../const/contractAddresses';
 import FromTimer from './dashboard/FromTimer';
+import { toast } from 'react-toastify';
+
 
 const Hero = () => {
+  const notify = () => toast("Wow so easy !");
   const address = useAddress();
   const maxClaimQuantity = 2;
   const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
@@ -170,6 +173,33 @@ if (error || !nft)
                         <Web3Button
                           contractAddress={tokenizedBronzeAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
+                          onError={(err) => {
+                            console.error(err);
+                            console.log({ err });
+                            toast.error(`Failed to mint drop: ${(err as any).reason || ""}`, {
+                              position: "top-right",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                                });
+                            }}
+                        
+                          onSuccess={() => {
+                            toast.success('🦄 Successfully minted! - The NFT has been transferred to your wallet', {
+                              position: "top-right",
+                              autoClose: 5000,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: "light",
+                              });
+                          }}
                           className="min-w-218 min-h-50 border-3 border-solid border-ebc45b font-bold uppercase bg-green-500 animate-pulse"
                           style={{
                                 animationDuration: '1s', // Adjust the duration as needed
