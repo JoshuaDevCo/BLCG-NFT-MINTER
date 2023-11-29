@@ -22,9 +22,9 @@ const Navbar = () => {
       </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal  z-[10] px-1">
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/about">About</NavLink></li>
-      <li><NavLink to="/tokenized-nfts">TokenizedNFT</NavLink></li>
+      <li><NavLink to="/">Mint</NavLink></li>
+      <li><NavLink to="https://billionlocalcoin.io">Homepage</NavLink></li>
+      <li><NavLink to="/smart-portal">Smart Portal</NavLink></li>
       <li><NavLink to="/news">News</NavLink></li>
     </ul>
   </div>
