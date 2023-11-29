@@ -69,8 +69,58 @@ const Hero = () => {
   } = useClaimedNFTSupply(contract);
 
 
+  if (contractMetadataisLoading)
   return (
+    <div className="hero bg-base-200 mx-auto ">
+    <video
+      src={heroVideo}
+      autoPlay
+      loop
+      muted
+      className="object-cover w-full h-full absolute -z-10"
+    />
+    <div className="hero-overlay bg-opacity-50"></div>
+<div className="hero-content gap-4 flex-col lg:flex-row-reverse">
+  <div className="text-center lg:text-left">
+  <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
+    <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+  </div>
+  <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
+    <form className="card-body">
+        <p>Loading....</p>
+    </form>
+  </div>
+</div>
+</div>
+  );
 
+if (error || !nft)
+  return (
+    <div className="hero bg-base-200 mx-auto ">
+      <video
+        src={heroVideo}
+        autoPlay
+        loop
+        muted
+        className="object-cover w-full h-full absolute -z-10"
+      />
+      <div className="hero-overlay bg-opacity-50"></div>
+  <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
+    <div className="text-center lg:text-left">
+    <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
+      <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+    </div>
+    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
+      <form className="card-body">
+          <p>Error Occured...</p>
+      </form>
+    </div>
+  </div>
+</div>
+  );
+
+
+  return (
     <div className="hero bg-base-200 mx-auto ">
       <video
         src={heroVideo}
