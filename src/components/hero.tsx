@@ -11,7 +11,6 @@ import { toast } from 'react-toastify';
 
 
 const Hero = () => {
-  const notify = () => toast("Wow so easy !");
   const address = useAddress();
   const maxClaimQuantity = 2;
   const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
@@ -176,7 +175,7 @@ if (error || !nft)
                           onError={(err) => {
                             console.error(err);
                             console.log({ err });
-                            toast.error(`Failed to mint drop: ${(err as any).reason || ""}`, {
+                            toast.error(`Failed to mint drop get a gas fees: ${(err as any).reason || ""}`, {
                               position: "top-right",
                                 autoClose: 5000,
                                 hideProgressBar: false,
