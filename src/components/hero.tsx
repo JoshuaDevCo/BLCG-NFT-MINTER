@@ -93,11 +93,12 @@ const Hero = () => {
         {contractMetadata?.name}        
         </h2>
         <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
-        <h6 className="nft-font text-center text-portal">
+        <h6 className="nft-font text-center text-portal font-bold mb-4 mt-4">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
         <FromTimer />
-       <center className="mb-4 mt-4">
+        <div className="form-control mt-6">
+        <center className="mb-4 mt-4">
        {address ? (
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
@@ -135,9 +136,6 @@ const Hero = () => {
                 <p>Connect Wallet to claim</p>
               )}
        </center>
-
-        <div className="form-control mt-6">
-          <ConnectWallet/>
         </div>
       </form>
     </div>
