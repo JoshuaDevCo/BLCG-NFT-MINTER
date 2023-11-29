@@ -1,7 +1,7 @@
 import { ConnectWallet } from '@thirdweb-dev/react';
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom"; // Import NavLink
-import BLCGLogo from "../assets/BLCG-PASS.png"
+import BLCGLogo from "../assets/logo.png"
 
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
           src={BLCGLogo}
           width={60}
         />
-         BLCG
+         <h1>BLCG</h1>
       </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal  z-[10] px-1">
@@ -26,17 +26,6 @@ const Navbar = () => {
       <li><NavLink to="/about">About</NavLink></li>
       <li><NavLink to="/tokenized-nfts">TokenizedNFT</NavLink></li>
       <li><NavLink to="/news">News</NavLink></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>Earn CTX</summary>
-          <ul className="p-2">
-            <li><NavLink to="/claim-airdrop">Airdrop</NavLink></li>
-            <li><NavLink to="/collect-free-token">Collect Free Tokens</NavLink></li>
-            <li><NavLink to="/earn-ctx">Giveaway</NavLink></li>
-          </ul>
-        </details>
-      </li>
-
     </ul>
   </div>
   <div className="navbar-end">

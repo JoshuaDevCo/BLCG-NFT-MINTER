@@ -4,12 +4,74 @@ import heroVideo from "../assets/hero.mp4";
 import { useMemo, useState, useRef } from "react";
 import NFTlogo from "../assets/BLCG-PASS.png";
 import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
+import { useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
+import { tokenizedBronzeAddress } from '../const/contractAddresses';
+import TimerGrid from './dashboard/TimerGrid';
 
 const Hero = () => {
+  const address = useAddress();
+  const maxClaimQuantity = 2;
+  const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
+
+  const { data: nft, isLoading, error } = useNFT(contract, "0");
+  const {
+    data: contractMetadata,
+    isLoading: contractMetadataisLoading,
+  } = useContractMetadata(contract);
+
+  const {
+    data: totalSupply,
+    isLoading: totalSupplyisLoading,
+  } = useTotalCount(contract);
+
+  const {
+    data: activeClaimPhase,
+    isLoading: isActiveClaimPhaseLoading,
+  } = useActiveClaimConditionForWallet(contract, address);
+
+  const {
+    data: claimIneligibilityReasons,
+    isLoading: isClaimIneligibilityReasonsLoading,
+  } = useClaimIneligibilityReasons(contract, {
+    walletAddress: address || "",
+    quantity: 1,
+  });
+
+  const [claimQuantity, setClaimQuantity] = useState(1);
+  const increment = () => {
+    if (claimQuantity < maxClaimQuantity) {
+      setClaimQuantity(claimQuantity + 1);
+    }
+  };
+  const decrement = () => {
+    if (claimQuantity > 1) {
+      setClaimQuantity(claimQuantity - 1);
+    }
+  };
+
+  const {
+    data: totalClaimed,
+    isLoading: isTotalClaimedLoading,
+  } = useTotalCirculatingSupply(contract);
+
+  const maxClaimamble = parseInt(
+    activeClaimPhase?.maxClaimablePerWallet || "0"
+  );
+
+  const {
+    data: ownedNFTs,
+    isLoading: ownedNFTsIsLoading,
+  } = useOwnedNFTs(contract, address);
+
+  const {
+    data: totalClaimedSupply,
+    isLoading: totalClaimedSupplyisLoading,
+  } = useClaimedNFTSupply(contract);
+
 
   return (
 
-    <div className="hero bg-base-200">
+    <div className="hero bg-base-200 mx-auto">
       <video
         src={heroVideo}
         autoPlay
@@ -20,17 +82,22 @@ const Hero = () => {
       <div className="hero-overlay bg-opacity-50"></div>
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-    <h1 className="text-2xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-      <p className="py-4 text-black">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. These passes offer entry to BLC Gold's IDO, Mining, and Staking, along with a range of privileges and opportunities within the BLCG Coin community.</p>
+    <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
+      <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. These passes offer entry to BLC Gold's IDO, Mining, and Staking, along with a range of privileges and opportunities within the BLCG Coin community.</p>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
-      <div className="grid grid-cols-2 gap-4 mt-8">
-          <img className="w-full rounded-lg" src={NFTlogo} alt="office content 1" />
-          <img className="mt-4 w-full lg:mt-12 rounded-lg" src={NFTlogo2} alt="office content 2" />
-        </div>
+          <img className="w-full rounded-lg" src={contractMetadata?.image} alt="office content 1" />
+       <h2 className="card-title text-black text-center nft-head">
+        {contractMetadata?.name}        
+        </h2>
+        <h5 className="nft-font">{contractMetadata?.description}</h5>
+        <h6 className="nft-font text-portal">
+          Claim BLCG Golden Pass NFT for FREE!
+        </h6>
+        <TimerGrid />
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn ">Login</button>
         </div>
       </form>
     </div>

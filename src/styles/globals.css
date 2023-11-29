@@ -310,6 +310,11 @@ body {
   --tw-bg-opacity: 0.5;
 }
 
+.text-mobile {
+  font-size: 2.5rem;
+  line-height: 2rem;
+}
+
 .custom-gap {
    gap: 12rem;
 }
