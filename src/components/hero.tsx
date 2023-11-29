@@ -87,15 +87,15 @@ const Hero = () => {
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
-          <img className="w-full rounded-lg" src={contractMetadata?.image} alt="office content 1" />
+          <img className="w-100 item-center rounded-lg" src={contractMetadata?.image} alt="office content 1" />
        <h2 className="card-title text-black text-center nft-head">
         {contractMetadata?.name}        
         </h2>
-        <h5 className="nft-font">{contractMetadata?.description}</h5>
-        <h6 className="nft-font text-portal">
+        <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
+        <h6 className="nft-font text-center text-portal">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
-        <TimerGrid />
+       <center> <TimerGrid /></center>
         <div className="form-control mt-6">
           <button className="btn ">Login</button>
         </div>
