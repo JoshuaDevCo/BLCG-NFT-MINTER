@@ -4,7 +4,7 @@ import heroVideo from "../assets/hero.mp4";
 import { useMemo, useState, useRef } from "react";
 import NFTlogo from "../assets/BLCG-PASS.png";
 import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
-import { Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
+import { ConnectWallet, Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
 import { tokenizedBronzeAddress } from '../const/contractAddresses';
 import FromTimer from './dashboard/FromTimer';
 
@@ -83,7 +83,8 @@ const Hero = () => {
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-      <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. These passes offer entry to BLC Gold's IDO, Mining, and Staking, along with a range of privileges and opportunities within the BLCG Coin community.</p>
+      <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
@@ -103,7 +104,7 @@ const Hero = () => {
                       <p key={index}>{reason}</p>
                     ))
                   ) : (
-                    <div>
+                    <div className="mb-4 mt-4">
                       <p className="text-portal text-lg font-bold">Eligible to claim</p>
                       <div className="">
 
@@ -135,7 +136,7 @@ const Hero = () => {
        </center>
 
         <div className="form-control mt-6">
-          <button className="btn ">Login</button>
+          <ConnectWallet/>
         </div>
       </form>
     </div>
