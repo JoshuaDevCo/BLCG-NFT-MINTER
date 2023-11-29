@@ -4,7 +4,7 @@ import heroVideo from "../assets/hero.mp4";
 import { useMemo, useState, useRef } from "react";
 import NFTlogo from "../assets/BLCG-PASS.png";
 import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
-import { useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
+import { Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
 import { tokenizedBronzeAddress } from '../const/contractAddresses';
 import FromTimer from './dashboard/FromTimer';
 
@@ -71,7 +71,7 @@ const Hero = () => {
 
   return (
 
-    <div className="hero bg-base-200 mx-auto">
+    <div className="hero bg-base-200 mx-auto ">
       <video
         src={heroVideo}
         autoPlay
