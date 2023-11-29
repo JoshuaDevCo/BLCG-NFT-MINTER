@@ -9,21 +9,21 @@ const Hero = () => {
 
   return (
 
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero bg-base-200">
       <video
         src={heroVideo}
         autoPlay
         loop
         muted
-        className="object-cover hero w-full h-full absolute -z-10"
+        className="object-cover w-full h-full absolute -z-10"
       />
       <div className="hero-overlay bg-opacity-50"></div>
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     <h1 className="text-2xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-      <p className="py-6 text-black">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. These passes offer entry to BLC Gold's IDO, Mining, and Staking, along with a range of privileges and opportunities within the BLCG Coin community.</p>
+      <p className="py-4 text-black">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. These passes offer entry to BLC Gold's IDO, Mining, and Staking, along with a range of privileges and opportunities within the BLCG Coin community.</p>
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
       <div className="grid grid-cols-2 gap-4 mt-8">
           <img className="w-full rounded-lg" src={NFTlogo} alt="office content 1" />
