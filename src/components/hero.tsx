@@ -115,7 +115,7 @@ if (error || !nft)
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
-          <p>Error Occured...</p>
+          <p>Error Occurred...</p>
       </form>
     </div>
   </div>
