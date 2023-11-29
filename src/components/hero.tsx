@@ -84,20 +84,21 @@ const Hero = () => {
     <div className="text-center lg:text-left">
     <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
       <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
-
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
-          <img className="w-50 item-center rounded-lg" src={contractMetadata?.image} alt="office content 1" />
-       <h2 className="card-title text-black text-center nft-head">
+          <img className="w-50 item-center rounded-lg" src={contractMetadata?.image} alt="Gpass" />
+          <center>
+        <h2 className="text-center card-title text-black nft-head">
         {contractMetadata?.name}        
         </h2>
-        <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
+        </center>
         <h6 className="nft-font text-center text-portal font-bold mb-4 mt-4">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
         <FromTimer />
-        <div className="form-control mt-6">
+        <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
+        <div className="form-control">
         <center className="mb-4 mt-4">
        {address ? (
                 !isClaimIneligibilityReasonsLoading ? (
@@ -110,7 +111,7 @@ const Hero = () => {
                       <p className="text-portal text-lg font-bold">Eligible to claim</p>
                       <div className="">
 
-                        <div className="claimValue mt-4 mb-4">
+                        <div className="claimValue mt-2 mb-2">
                           <button className="claimBtn" onClick={decrement}>-</button>
                           <input className="input input-bordered w-full nft-width" type="number" value={claimQuantity} />
                           <button className="claimBtn" onClick={increment}>+</button>
