@@ -6,7 +6,7 @@ import NFTlogo from "../assets/BLCG-PASS.png";
 import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
 import { useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
 import { tokenizedBronzeAddress } from '../const/contractAddresses';
-import TimerGrid from './dashboard/TimerGrid';
+import FromTimer from './dashboard/FromTimer';
 
 const Hero = () => {
   const address = useAddress();
@@ -87,7 +87,7 @@ const Hero = () => {
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <form className="card-body">
-          <img className="w-100 item-center rounded-lg" src={contractMetadata?.image} alt="office content 1" />
+          <img className="w-50 item-center rounded-lg" src={contractMetadata?.image} alt="office content 1" />
        <h2 className="card-title text-black text-center nft-head">
         {contractMetadata?.name}        
         </h2>
@@ -95,7 +95,7 @@ const Hero = () => {
         <h6 className="nft-font text-center text-portal">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
-       <center> <TimerGrid /></center>
+       <center> <FromTimer /></center>
         <div className="form-control mt-6">
           <button className="btn ">Login</button>
         </div>

@@ -111,6 +111,16 @@ body {
 
 }
 
+.timeGrid2 {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: nowrap;
+  margin-top: -9px;
+  align-content: flex-start;
+  justify-content: center;
+}
+
 .bg-features-1 {
   position: relative;
   overflow: hidden;
