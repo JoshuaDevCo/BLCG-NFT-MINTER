@@ -24,7 +24,8 @@ const ContentSection = () => {
         </ul> 
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
-          <img className="mt-4 w-full rounded-lg" src={NFTlogo3} alt="office content 2" />
+          <img className="w-full rounded-lg" src={NFTlogo} alt="office content 1" />
+          <img className="mt-4 w-full lg:mt-12 rounded-lg" src={NFTlogo2} alt="office content 2" />
         </div>
       </div>
     </section>
