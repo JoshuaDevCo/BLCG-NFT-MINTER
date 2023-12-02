@@ -1,3 +1,5 @@
+//testnet
+
 export const tokenizedBronzeAddress =
   "0xfEd68C21FA67d07F2116Aa0e758c7035f839d9d5";
   
@@ -15,4 +17,12 @@ export const stakingAddress =
 
   export const WalletRecoveryAddress =
   "0xE373301Bb0870dcadfdb0A55C931447dB0097ba4";
+
+
+
+
+  //Mainnet
+  export const goldenPassNFTAddress =
+  "0xDB39Ef9Fc0506b0e6763141927f91b59Cbb1dAcF";
+  
 

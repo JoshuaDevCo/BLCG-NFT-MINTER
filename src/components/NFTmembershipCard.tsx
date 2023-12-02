@@ -15,7 +15,7 @@ import {
   useTotalCirculatingSupply,
   MediaRenderer,
 } from "@thirdweb-dev/react";
-import { tokenizedBronzeAddress } from "../const/contractAddresses";
+import { goldenPassNFTAddress } from "../const/contractAddresses";
 import TimerGrid from "./dashboard/TimerGrid";
 import Mint from "./dashboard/Mint";
 import { ethers } from "ethers";
@@ -23,7 +23,7 @@ import { ethers } from "ethers";
 export default function NFTMembership() {
   const address = useAddress();
   const maxClaimQuantity = 2;
-  const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
+  const { contract } = useContract(goldenPassNFTAddress, "nft-drop");
 
   const { data: nft, isLoading, error } = useNFT(contract, "0");
   const {
@@ -181,7 +181,7 @@ export default function NFTMembership() {
                         </div>
 
                         <Web3Button
-                          contractAddress={tokenizedBronzeAddress}
+                          contractAddress={goldenPassNFTAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
                           className="min-w-218 min-h-50 border-3 border-solid border-ebc45b font-bold uppercase bg-green-500 animate-pulse"
                           style={{

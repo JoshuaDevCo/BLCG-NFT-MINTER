@@ -5,7 +5,7 @@ import { useMemo, useState, useRef } from "react";
 import NFTlogo from "../assets/BLCG-PASS.png";
 import NFTlogo2 from "../assets/BLCG-PASS-COVER.png";
 import { ConnectWallet, Web3Button, useActiveClaimConditionForWallet, useAddress, useClaimIneligibilityReasons, useClaimedNFTSupply, useContract, useContractMetadata, useNFT, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
-import { tokenizedBronzeAddress } from '../const/contractAddresses';
+import { goldenPassNFTAddress } from '../const/contractAddresses';
 import FromTimer from './dashboard/FromTimer';
 import { toast } from 'react-toastify';
 
@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 const Hero = () => {
   const address = useAddress();
   const maxClaimQuantity = 2;
-  const { contract } = useContract(tokenizedBronzeAddress, "nft-drop");
+  const { contract } = useContract(goldenPassNFTAddress, "nft-drop");
 
   const { data: nft, isLoading, error } = useNFT(contract, "0");
   const {
@@ -179,7 +179,7 @@ if (error || !nft)
                         </div>
 
                         <Web3Button
-                          contractAddress={tokenizedBronzeAddress}
+                          contractAddress={goldenPassNFTAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
                           onError={(err) => {
                             console.error(err);
