@@ -28,7 +28,9 @@ const Navbar = () => {
           src={BLCGLogo}
           width={60}
         />
-         <h1 className="font-bold text-2xl">BLCG</h1>
+         <h1 className="font-bold text-2xl" style={{
+              color: 'gold',
+         }}>BLCG</h1>
       </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal  z-[10] px-1">
