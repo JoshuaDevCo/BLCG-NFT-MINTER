@@ -86,6 +86,7 @@ const Hero = () => {
   <div className="text-center lg:text-left">
   <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
     <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+    <FromTimer />
   </div>
   <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
     <div className="card-body">
@@ -111,6 +112,7 @@ if (error || !nft)
     <div className="text-center lg:text-left">
     <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
       <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+      <FromTimer />
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <div className="card-body">
@@ -123,7 +125,7 @@ if (error || !nft)
 
 
   return (
-    <div className="hero bg-base-200 mx-auto ">
+    <div className="hero bg-blc mx-auto ">
       <video
         src={heroVideo}
         autoPlay
@@ -134,8 +136,15 @@ if (error || !nft)
       <div className="hero-overlay bg-opacity-50"></div>
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-    <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
+    <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl heroFont" style={{
+    textTransform: 'uppercase',
+    color: 'gold',
+    borderBottom: '2px solid #42cc13',
+    paddingBottom: '14px',
+    textShadow: '1px 1px 0px black'
+}}>CLAIM BLCG GOLDEN PASS!</h1>
       <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+      <div className="lg:hidden text-center lg:text-left "><FromTimer/></div>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <div className="card-body">
@@ -145,10 +154,10 @@ if (error || !nft)
         {contractMetadata?.name}        
         </h2>
         </center>
-        <h6 className="nft-font text-center text-portal font-bold mb-4 mt-4">
+        <h6 className="nft-font text-center text-portal font-bold mb-4 mt-2">
           Claim BLCG Golden Pass NFT for FREE!
         </h6>
-        <FromTimer />
+        <center><div className="hidden lg:flex text-center"><FromTimer/></div></center>
         <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
         <div className="form-control">
         <center className="mb-4 mt-4">

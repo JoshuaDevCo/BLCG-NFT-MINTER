@@ -10,6 +10,22 @@
   box-sizing: border-box;
 }
 
+@media (min-width: 1024px){
+  .lg\:flex {
+    display: flex;
+    justify-content: center;
+}
+}
+
+.bg-blc {
+  background-image: url(https://www.billionlocalcoin.io/public/images/bg.png);
+  background-color: #b68e08;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -316,7 +332,7 @@ body {
   grid-row-start: 1;
   height: 100%;
   width: 100%;
-  background-color: #ffe000f0;
+  background-color: #ffe00066;
   --tw-bg-opacity: 0.5;
 }
 
