@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ConnectWallet, darkTheme } from "@thirdweb-dev/react";
-import { MdOutlineFavorite, MdOutlineHome, MdRecycling, MdSpaceDashboard, MdWallet } from "react-icons/md";
+import { MdHome, MdOutlineFavorite, MdOutlineHome, MdRecycling, MdSpaceDashboard, MdWallet } from "react-icons/md";
 import { GiTwirlCenter } from "react-icons/gi";
 import { NavLink, useLocation } from "react-router-dom";  // Explicitly import useLocation
 import BLCGlogo from "./BLCG.png"
@@ -18,8 +18,9 @@ export default function Navbar() {
   }
   
   const navLinks: NavLinkProps[] = [
-    { to: "/smart-portal", label: "BLCG Golden Pass", icon: <MdSpaceDashboard className="text-xl" /> },
-    { to: "/stake-nfts", label: "My Golden Pass", icon: <MdRecycling className="text-xl" /> },
+    { to: "/", label: "Main Website", icon: <MdHome className="text-xl" /> },
+    { to: "/smart-portal", label: "Smart Portal", icon: <MdSpaceDashboard className="text-xl" /> },
+    { to: "/my-nfts", label: "My Golden Pass", icon: <MdRecycling className="text-xl" /> },
     { to: "/workshop", label: "Newbie Workshop", icon: <GiTwirlCenter className="text-xl" /> },
   ];
 
