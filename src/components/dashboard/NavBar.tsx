@@ -23,6 +23,12 @@ export default function Navbar() {
     { to: "/workshop", label: "Newbie Workshop", icon: <GiTwirlCenter className="text-xl" /> },
   ];
 
+  const getPageName = () => {
+    const pathSegments = location.pathname.split("/").filter((segment) => segment !== "");
+    return pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : "Home";
+  };
+
+
   const SidebarHeader = styled.div`
   display: flex;
   items: center;
@@ -41,13 +47,20 @@ export default function Navbar() {
   <div className="drawer-content flex flex-col">
     {/* Navbar */}
     <div className="w-full navbar">
-      <div className="flex-1 px-2 mx-2">
+      <div className="flex-1 px-2 mx-2 gap-2">
       <img
-          src="https://www.billionlocalcoin.io/public/images/logo.png"
+          src="https://www.billionlocalcoin.io/public/images/BLCG-PASS.png"
           alt="Logo"
           width="50px"
         />
         <div className="title text-portal">
+        <div className="text-sm breadcrumbs">
+  <ul>
+    <li><a>Home</a></li> 
+    <li><a>Smart Portal</a></li> 
+    <li>{getPageName()}</li>
+  </ul>
+</div>
         <h4>Welcome Back!</h4>
         <h1>
          Smart Portal
