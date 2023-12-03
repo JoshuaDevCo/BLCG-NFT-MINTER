@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.navbar {
+  padding: 0px;
+}
+
 
 body {
   font-family: "Montserrat", sans-serif;

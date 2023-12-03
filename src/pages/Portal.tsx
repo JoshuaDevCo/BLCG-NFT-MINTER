@@ -18,7 +18,16 @@ import ProjectInfoCard from "../components/dashboard/ProjectInfoCard";
 import NFTMembership from "../components/NFTmembershipCard";
 import ButtomNavbar from "../components/dashboard/ButtomNavbar";
 
+
 export default function Home() {
+
+  useEffect(() => {
+    document.title = "Smart Portal";
+    return () => {
+      document.title = "Smart Portal"; // Reset title when component unmounts
+    };
+  }, []);
+
   useEffect(() => {
     const sr = scrollreveal({
       origin: "bottom",
