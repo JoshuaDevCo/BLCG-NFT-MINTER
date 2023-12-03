@@ -49,7 +49,7 @@ const ProjectInfoCard = () => {
   <li className="mb-2">Exclusive privileges, including the highly coveted Community Pass, granting you VIP status within the BLCG Coin community.</li>
   <li className="mb-2">Whitelisting for priority access ensures you're at the forefront of groundbreaking developments, securing your spot in the forefront of crypto trends.</li>
   <li className="mb-2">Embark on a journey of wealth creation with BLCG Mining privileges, allowing you to reap the rewards of your active participation.</li>
-  <li className="mb-2">Gain IDO Access to BLC Gold, positioning yourself at the forefront of token offerings and investment opportunities.</li>
+  <li className="mb-2">Gain IDO Access to BLC Gold, positioning yourself at the forefront of token offerings and other opportunities.</li>
   {/* Add any other relevant details about the collection */}
 </ul>
       </div>
