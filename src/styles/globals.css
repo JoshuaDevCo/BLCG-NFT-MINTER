@@ -351,9 +351,9 @@ body {
    background-color: #000000;
 }
 
-.trcHeader{
-   --tw-bg-opacity: 1;
-   background-color: #5f4702;
+.trcHeader {
+  --tw-bg-opacity: 1;
+  background-color: #f1c40f;
 }
 
 .bg-portal {
