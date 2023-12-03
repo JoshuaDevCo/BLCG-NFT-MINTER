@@ -85,8 +85,7 @@ const Hero = () => {
 <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
   <div className="text-center lg:text-left">
   <h1 className="text-mobile font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl heroFont">BLCG GOLDEN PASS NFT!</h1>
-    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in
-        </p>
+    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in </p>
     </div>
   <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
     <div className="card-body">
@@ -111,7 +110,7 @@ if (error || !nft)
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     <h1 className="text-mobile font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-      <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in </p>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <div className="card-body">
@@ -142,7 +141,7 @@ if (error || !nft)
     paddingBottom: '14px',
     textShadow: '1px 1px 0px black'
 }}>CLAIM BLCG GOLDEN PASS!</h1>
-      <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold. Golden Pass NFT FREE! mint will start in: </p>
       <div className="lg:hidden text-center lg:text-left "><FromTimer/></div>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
@@ -156,7 +155,7 @@ if (error || !nft)
         <h6 className="nft-font text-center text-portal font-bold mb-4 mt-2">
         Golden Pass NFT Collection FREE! minting will start in:
         </h6>
-        <center><div className="hidden lg:flex text-center"><FromTimer/></div></center>
+        <center><div className="text-center"><FromTimer/></div></center>
         <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
         <div className="form-control">
         <center className="mb-4 mt-4">

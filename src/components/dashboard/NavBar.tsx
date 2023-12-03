@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BiSearch } from "react-icons/bi";
 import { ConnectWallet, darkTheme } from "@thirdweb-dev/react";
 import { MdOutlineFavorite, MdOutlineHome, MdRecycling, MdSpaceDashboard, MdWallet } from "react-icons/md";
-import { RiDashboard2Fill, RiDatabase2Fill } from "react-icons/ri";
 import { GiTwirlCenter } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";  // Explicitly import useLocation
 import BLCGlogo from "./BLCG.png"
 
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState<boolean>(false);
+  const location = useLocation();  // Now useLocation is explicitly imported from react-router-dom
+
 
   interface NavLinkProps {
     to: string;
@@ -57,8 +57,7 @@ export default function Navbar() {
         <div className="text-sm breadcrumbs">
   <ul>
     <li><a>Home</a></li> 
-    <li><a>Smart Portal</a></li> 
-    <li>{getPageName()}</li>
+    <li><a>{getPageName()}</a></li>
   </ul>
 </div>
         <h4>Welcome Back!</h4>
