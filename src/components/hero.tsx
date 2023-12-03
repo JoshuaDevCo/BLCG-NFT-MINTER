@@ -84,8 +84,10 @@ const Hero = () => {
     <div className="hero-overlay bg-opacity-50"></div>
 <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
   <div className="text-center lg:text-left">
-  <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-    <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
+  <h1 className="text-mobile font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl dark:text-black heroFont">BLCG GOLDEN PASS NFT!</h1>
+    <p className="py-4 text-black font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in
+        </p>
+  
     <FromTimer />
   </div>
   <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">

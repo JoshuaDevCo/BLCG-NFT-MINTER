@@ -117,7 +117,7 @@ export default function NFTMembership() {
         </h2>
 
         <h6 className="nft-font text-portal">
-          Claim BLCG Golden Pass NFT for FREE!
+           Golden Pass NFT FREE! mint will start in
         </h6>
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
@@ -137,13 +137,13 @@ export default function NFTMembership() {
             <b className="text-bold text-portal">
             {activeClaimPhase?.price
                   ? ethers.utils.formatUnits(activeClaimPhase.price)
-                  : "N/A"} 
+                  : "N/A"} BNB
             </b>
           </h5>
         
           <h5 className="nft-font">
             {" "}
-            NFT Owned:{" "}
+            NFT Claimed:{" "}
             <b className="text-bold text-portal">
               {ownedNFTsIsLoading ? "Loading...." : `${ownedNFTs?.length}`}
             </b>
