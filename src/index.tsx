@@ -45,20 +45,8 @@ const router = createBrowserRouter([
         element: <Portal />,
       },
       {
-        path: "/mint-nfts",
-        element: <NFT />,
-      },
-      {
-        path: "/stake-nfts",
+        path: "/my-nfts",
         element: <StakeNFT />,
-      },
-      {
-        path: "/stake-trc",
-        element: <StakeToken />,
-      },
-      {
-        path: "/swap-trc",
-        element: <FreshMint />,
       },
       {
         path: "/workshop",

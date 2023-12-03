@@ -92,10 +92,6 @@ export default function StakeNFT() {
     <Section>
       <NavBar />
       <div className="grid">
-      {/* <div className="row__one">
-          <StakedNFTRewardWidget />
-          <TRCWidget />
-        </div> */}
       <div className="news">
       <NFTStakeCard/>
       </div>

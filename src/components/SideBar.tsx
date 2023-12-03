@@ -5,7 +5,7 @@ import scrollreveal from "scrollreveal";
 import BLCGlogo from "../assets/BLCG.png";
 import { NavLink } from "react-router-dom";
 import { Transition } from "@headlessui/react";
-import { MdRecycling, MdSpaceDashboard, MdWallet } from "react-icons/md";
+import { MdHome, MdRecycling, MdSpaceDashboard, MdWallet } from "react-icons/md";
 
 interface NavLinkProps {
   to: string;
@@ -14,8 +14,9 @@ interface NavLinkProps {
 }
 
 const navLinks: NavLinkProps[] = [
-  { to: "/smart-portal", label: "BLCG Golden Pass", icon: <MdSpaceDashboard className="text-xl" /> },
-  { to: "/stake-nfts", label: "My Golden Pass", icon: <MdRecycling className="text-xl" /> },
+  { to: "/", label: "Main Website", icon: <MdHome className="text-xl" /> },
+  { to: "/smart-portal", label: "Smart Portal", icon: <MdSpaceDashboard className="text-xl" /> },
+  { to: "/my-nfts", label: "My Golden Pass", icon: <MdRecycling className="text-xl" /> },
   { to: "/workshop", label: "Newbie Workshop", icon: <GiTwirlCenter className="text-xl" /> },
 ];
 
