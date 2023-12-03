@@ -117,7 +117,7 @@ export default function NFTMembership() {
         </h2>
 
         <h6 className="nft-font text-portal">
-           Golden Pass NFT FREE! mint will start in
+           Golden Pass NFT Collection FREE! minting will start in:
         </h6>
         <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
@@ -167,7 +167,7 @@ export default function NFTMembership() {
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
                     claimIneligibilityReasons?.map((reason, index) => (
-                      <p key={index}>{reason}</p>
+                      <p key={index}>The claiming process will be open at the end of the countdown.</p>
                     ))
                   ) : (
                     <div>
