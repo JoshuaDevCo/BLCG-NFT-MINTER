@@ -19,6 +19,7 @@ import { goldenPassNFTAddress } from "../const/contractAddresses";
 import TimerGrid from "./dashboard/TimerGrid";
 import Mint from "./dashboard/Mint";
 import { ethers } from "ethers";
+import Card from "./dashboard/Card";
 
 export default function NFTMembership() {
   const address = useAddress();
@@ -107,9 +108,10 @@ export default function NFTMembership() {
     );
 
   return (
-    <SlidingCard className="rounded-[12px] border-[2px] border-portal bg-clip-border shadow-md shadow-[#27ff0059] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none !p-[14px] mt-4 mb-4">
-      <ImageContainer>
-        <img src={contractMetadata?.image} alt="Token Logo" />
+   <Card extra="!p-[20px] radius-10 w-100 mt-4">
+    <SlidingCard>
+    <ImageContainer>
+        <img src={contractMetadata?.image} alt="Token Logo" className="w-50 item-center shadow-lg rounded-lg"/>
       </ImageContainer>
       <CardContent>
         <h2 className="card-title text-portal nft-head">
@@ -200,7 +202,8 @@ export default function NFTMembership() {
                 <p>Connect Wallet to claim</p>
               )}
       </CardContent>
-    </SlidingCard>
+      </SlidingCard>
+    </Card>
   );
 }
 
@@ -208,7 +211,6 @@ const SlidingCard = styled.section`
   ${cardStyles};
   display: flex;
   flex-direction: row-reverse;
-  background: #000;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0rem;
@@ -253,11 +255,6 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  img {
-    max-height: 20rem;
-    max-width: 20rem;
-    border-radius: 10%;
-    object-fit: cover;
-  }
 `;
+
+

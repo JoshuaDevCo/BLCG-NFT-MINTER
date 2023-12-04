@@ -26,8 +26,8 @@ const AuthCardSection = styled.section`
   width: 100%;
 
   img {
-    width: 150px;
-    height: 172px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 1rem;
     border-radius: 50%;
   }

@@ -60,11 +60,12 @@ export default function Navbar() {
     <li><a>Home</a></li> 
     <li><a>{getPageName()}</a></li>
   </ul>
-</div>
-        <h4>Welcome Back!</h4>
+  <h4>Welcome Back!</h4>
         <h1>
          Smart Portal
         </h1>
+</div>
+
       </div></div>
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
