@@ -111,7 +111,7 @@ export default function NFTMembership() {
    <Card extra="!p-[20px] radius-10 w-100 mt-4">
     <SlidingCard>
     <ImageContainer>
-        <img src={contractMetadata?.image} alt="Token Logo" className="w-50 item-center shadow-lg rounded-lg"/>
+        <img src={contractMetadata?.image} alt="Token Logo" className="w-60 item-center shadow-lg rounded-lg"/>
       </ImageContainer>
       <CardContent>
         <h2 className="card-title text-portal nft-head">
@@ -127,15 +127,24 @@ export default function NFTMembership() {
         <div className="tagen-flex gap-2">
         <h5 className="nft-font">
   {" "}
-  Claim Phase:{" "}
+  NFT Pass Distribution Phase:{" "}
   <b className="text-bold text-portal">
     {activeClaimPhase?.metadata?.name || "N/A"}
   </b>
 </h5>
 
+
+<h5 className="nft-font">
+            {" "}
+            Claiming Duration:{" "}
+            <b className="text-bold text-portal">
+            48 Hours
+            </b>
+          </h5>
+
           <h5 className="nft-font">
             {" "}
-            Price:{" "}
+           Claiming Fees:{" "}
             <b className="text-bold text-portal">
             {activeClaimPhase?.price
                   ? ethers.utils.formatUnits(activeClaimPhase.price)
@@ -153,12 +162,9 @@ export default function NFTMembership() {
 
           <h5 className="nft-font">
             {" "}
-            Total Minted:{" "}
+            Total Available:{" "}
             <b className="text-bold text-portal">
-              {totalClaimedSupplyisLoading
-                ? "Loading...."
-                : ` ${totalClaimedSupply?.toNumber()} `}
-              /{" "}
+             {" "}
               {totalSupplyisLoading
                 ? "Loading...."
                 : ` ${totalSupply?.toNumber()} `}
@@ -169,7 +175,7 @@ export default function NFTMembership() {
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
                     claimIneligibilityReasons?.map((reason, index) => (
-                      <p key={index}>The claiming process will be open at the end of the countdown.</p>
+                      <p className="text-red" key={index}>The claiming process will be open at the end of the countdown.</p>
                     ))
                   ) : (
                     <div>

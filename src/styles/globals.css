@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.text-red{
+  color:#fe0000;
+}
+
 .navbar {
   padding: 4px;
 }
