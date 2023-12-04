@@ -151,7 +151,7 @@ if (error || !nft)
         {contractMetadata?.name}        
         </h2>
         </center>
-        <h6 className="nft-font text-center text-portal font-bold mb-4 mt-2">
+        <h6 className="nft-font text-center shadow-lg text-portal font-bold mb-4 mt-2">
         Golden Pass NFT Collection FREE! minting will start in:
         </h6>
         <center><div className="text-center"><FromTimer/></div></center>
@@ -162,7 +162,7 @@ if (error || !nft)
                 !isClaimIneligibilityReasonsLoading ? (
                   claimIneligibilityReasons?.length! > 0 ? (
                     claimIneligibilityReasons?.map((reason, index) => (
-                      <p key={index}>The claiming process will be open at the end of the countdown.</p>
+                      <p className="text-red" key={index}>The claiming process will be open at the end of the countdown.</p>
                     ))
                   ) : (
                     <div>
@@ -216,10 +216,10 @@ if (error || !nft)
                     </div>
                   )
                 ) : (
-                  <p>Checking Eligibility...</p>
+                  <p className='text-base text-red'>Checking Eligibility...</p>
                 )
               ) : (
-                <p>Connect Wallet to claim</p>
+                <p className='text-base text-red'>Connect Wallet to claim</p>
               )}
        </center>
         </div>

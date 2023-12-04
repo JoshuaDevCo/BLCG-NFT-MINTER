@@ -202,10 +202,10 @@ export default function NFTMembership() {
                     </div>
                   )
                 ) : (
-                  <p>Checking Eligibility...</p>
+                  <p className='text-base text-red'>Checking Eligibility...</p>
                 )
               ) : (
-                <p>Connect Wallet to claim</p>
+                <p className='text-base text-red'>Connect Wallet to claim</p>
               )}
       </CardContent>
       </SlidingCard>
