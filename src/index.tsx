@@ -12,6 +12,8 @@ import {
   walletConnect,
   localWallet,
   trustWallet,
+  embeddedWallet,
+  en,
 } from "@thirdweb-dev/react";
 
 import {
@@ -65,18 +67,28 @@ const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-      <ThirdwebProvider
+     <ThirdwebProvider
       activeChain={activeChain}
       clientId={process.env.REACT_APP_TEMPLATE_CLIENT_ID}
+      locale={en()}
       supportedWallets={[
-        metamaskWallet(),
+        metamaskWallet({ recommended: true }),
         coinbaseWallet(),
-        walletConnect(),
+        walletConnect({ recommended: true }),
         localWallet(),
+        embeddedWallet({
+          recommended: true,
+          auth: {
+            options: [
+              "google",
+              "email",
+            ],
+          },
+        }),
         trustWallet({ recommended: true }),
       ]}
     >
-      <ToastContainer
+       <ToastContainer
 position="bottom-left"
 autoClose={5000}
 hideProgressBar={false}

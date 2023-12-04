@@ -41,8 +41,21 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   <div className="relative group">
-    <ConnectWallet/>
-   </div>
+  <ConnectWallet
+        theme={"dark"}
+        className="lg:hidden"
+        btnTitle={"Connect Wallet"}
+        modalTitle={"Authenticate Wallet"}
+        switchToActiveChain={true}
+        modalSize={"compact"}
+        welcomeScreen={{}}
+        termsOfServiceUrl={
+          "https://www.billionlocalcoin.io/public/docs/Terms-conditions.pdf"
+        }
+        privacyPolicyUrl={
+          "https://www.billionlocalcoin.io/public/docs/Privacy-Policy.pdf"
+        }
+      />   </div>
  </div>
             
 </div>

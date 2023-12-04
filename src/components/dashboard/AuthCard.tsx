@@ -26,8 +26,8 @@ const AuthCardSection = styled.section`
   width: 100%;
 
   img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 172px;
     margin-bottom: 1rem;
     border-radius: 50%;
   }
@@ -51,14 +51,14 @@ export default function AuthCard() {
     <AuthCardContainer>
       <AuthCardSection>
         <img
-          src="https://www.billionlocalcoin.io/public/images/logo.png"
+          src="https://www.billionlocalcoin.io/public/images/BLCG-PASS.png"
           alt="Logo"
         />
-        <Heading as="h2" size="lg">
+        <Heading className="text-center font-bold" as="h2" size="lg">
           Authenticate Wallet
         </Heading>
-        <p>To proceed, securely connect your TrustWallet or Metamask extension.</p>
-        <p className="text-bold">Please connect your wallet</p>
+        <p className="text-center">To proceed, securely connect your TrustWallet or Metamask extension.</p>
+        <p className=" text-center text-portal shadow-lg text-bold">Please connect your wallet</p>
       <ConnectWallet
         theme={"dark"}
         className="lg:hidden"
@@ -68,10 +68,10 @@ export default function AuthCard() {
         modalSize={"compact"}
         welcomeScreen={{}}
         termsOfServiceUrl={
-          "https://www.billionlocalcoin.io/"
+          "https://www.billionlocalcoin.io/public/docs/Terms-conditions.pdf"
         }
         privacyPolicyUrl={
-          "https://www.billionlocalcoin.io"
+          "https://www.billionlocalcoin.io/public/docs/Privacy-Policy.pdf"
         }
       />
       </AuthCardSection>
