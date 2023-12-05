@@ -20,6 +20,7 @@ import TimerGrid from "./dashboard/TimerGrid";
 import Mint from "./dashboard/Mint";
 import { ethers } from "ethers";
 import Card from "./dashboard/Card";
+import { toast } from "react-toastify";
 
 export default function NFTMembership() {
   const address = useAddress();
