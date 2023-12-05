@@ -191,6 +191,33 @@ export default function NFTMembership() {
                         <Web3Button
                           contractAddress={goldenPassNFTAddress}
                           action={(contract) => contract.erc721.claim(claimQuantity)}
+                          onError={(err) => {
+                            console.error(err);
+                            console.log({ err });
+                            toast.error(`Failed to mint drop get a gas fees: ${(err as any).reason || ""}`, {
+                              position: "top-right",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                                });
+                            }}
+                        
+                          onSuccess={() => {
+                            toast.success('🦄 Successfully minted! - The NFT has been transferred to your wallet', {
+                              position: "top-right",
+                              autoClose: 5000,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: "light",
+                              });
+                          }}
                           className="min-w-218 min-h-50 border-3 border-solid border-ebc45b font-bold uppercase bg-green-500 animate-pulse"
                           style={{
                                 animationDuration: '1s', // Adjust the duration as needed
@@ -198,6 +225,8 @@ export default function NFTMembership() {
                         >
                           Claim and Mint NFT
                         </Web3Button>
+
+          
                       </div>
                     </div>
                   )
