@@ -143,7 +143,7 @@ export default function NFTMembership() {
             </b>
           </h5>
 
-          <h5 className="nft-font">
+          {/* <h5 className="nft-font">
             {" "}
            Claiming Fees:{" "}
             <b className="text-bold text-portal">
@@ -151,7 +151,7 @@ export default function NFTMembership() {
                   ? ethers.utils.formatUnits(activeClaimPhase.price)
                   : "N/A"} BNB
             </b>
-          </h5>
+          </h5> */}
         
           <h5 className="nft-font">
             {" "}
