@@ -151,7 +151,7 @@ if (error || !nft)
         {contractMetadata?.name}        
         </h2>
         </center>
-        <h6 className="nft-font text-center shadow-lg text-portal font-bold mb-4 mt-2">
+        <h6 className="nft-font text-center shadow-lg rounded-lg text-portal font-bold mb-4 mt-2">
         Golden Pass NFT Collection FREE! minting will end in:
         </h6>
         <center><div className="text-center"><FromTimer/></div></center>
