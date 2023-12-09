@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const TimerGrid = () => {
   // Set your target date for the countdown
-  const targetDate = new Date('2023-12-09T00:00:00Z');
+  const targetDate = new Date('2023-12-20T00:00:00Z');
 
   const calculateTimeDifference = () => {
     const now = new Date();
