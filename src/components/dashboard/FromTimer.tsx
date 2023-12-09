@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 const FromTimer = () => {
-  // Set your target date for the countdown
-  const targetDate = new Date('2023-12-09T00:00:00Z');
+  const targetDate = new Date('2023-12-20T00:00:00Z');
 
   const calculateTimeDifference = () => {
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
     if (difference <= 0) {
-      // Target date has passed, set countdown to 0
       return {
         days: 0,
         hours: 0,
@@ -38,7 +36,6 @@ const FromTimer = () => {
       setCountdown(calculateTimeDifference);
     }, 1000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 

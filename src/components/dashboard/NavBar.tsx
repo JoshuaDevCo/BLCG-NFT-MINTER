@@ -62,7 +62,7 @@ export default function Navbar() {
   </ul>
   <h4>Welcome Back!</h4>
         <h1>
-         Smart Portal
+         Smart Portal..
         </h1>
 </div>
 
