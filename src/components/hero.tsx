@@ -85,7 +85,7 @@ const Hero = () => {
 <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
   <div className="text-center lg:text-left">
   <h1 className="text-mobile font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl heroFont">BLCG GOLDEN PASS NFT!</h1>
-    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in </p>
+    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
     </div>
   <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
     <div className="card-body">
@@ -110,7 +110,7 @@ if (error || !nft)
   <div className="hero-content gap-4 flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     <h1 className="text-mobile font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-black heroFont">CLAIM BLCG GOLDEN PASS!</h1>
-    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.  Golden Pass NFT FREE! mint will start in </p>
+    <p className="py-4 text-white font-bold">The BLCG NFT Pass Golden Collection introduces a limited-edition series of 5000 NFT passes unlocking exclusive access to the thriving ecosystem of BLC Gold.</p>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white">
       <div className="card-body">
@@ -151,10 +151,6 @@ if (error || !nft)
         {contractMetadata?.name}        
         </h2>
         </center>
-        <h6 className="nft-font text-center shadow-lg rounded-lg text-portal font-bold mb-4 mt-2">
-        Golden Pass NFT Collection FREE! minting will end in:
-        </h6>
-        <center><div className="text-center"><FromTimer/></div></center>
         <h5 className="nft-font text-center text-black">{contractMetadata?.description}</h5>
         <div className="form-control">
         <center className="mb-4 mt-4">
