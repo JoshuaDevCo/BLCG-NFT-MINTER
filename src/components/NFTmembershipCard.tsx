@@ -119,10 +119,6 @@ export default function NFTMembership() {
         {contractMetadata?.name}        
         </h2>
 
-        <h6 className="nft-font text-portal">
-           Golden Pass NFT Collection FREE! minting will end in:
-        </h6>
-        <TimerGrid />
         <h5 className="nft-font">{contractMetadata?.description}</h5>
         
         <div className="tagen-flex gap-2">
